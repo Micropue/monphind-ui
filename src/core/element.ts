@@ -20,20 +20,22 @@ const baseStyle = `
 `
 const setStyle = (shadowRoot: ShadowRoot, style?: string): void => {
     try {
-        {
+        const initbase = () => {
             const sheet = new CSSStyleSheet()
             sheet.replaceSync(baseStyle)
             shadowRoot.adoptedStyleSheets.push(sheet)
         }
+        initbase()
         const sheet = new CSSStyleSheet()
         sheet.replaceSync(style ?? "")
         shadowRoot.adoptedStyleSheets.push(sheet)
     } catch {
-        {
+        const initbase = () => {
             const styleEle = document.createElement("style")
             styleEle.textContent = baseStyle
             shadowRoot.insertBefore(styleEle, shadowRoot.firstChild)
         }
+        initbase()
         const styleEle = document.createElement("style")
         styleEle.textContent = style ?? ""
         shadowRoot.insertBefore(styleEle, shadowRoot.firstChild)
