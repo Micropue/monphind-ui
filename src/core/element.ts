@@ -1,5 +1,8 @@
 //元素定义：元素名字，元素的模板，元素样式，元素方法，元素实现
 type Prop = string | number | boolean
+/**
+ * Prop需预先定义类型，否则返回时会出错。
+ */
 interface Config<M, P extends {
     [name: string]: Prop
 }> {
@@ -37,7 +40,8 @@ const setStyle = (shadowRoot: ShadowRoot, style?: string): void => {
     }
 }
 export const useElement = <M, P extends { [name: string]: Prop }>(config: Config<M, P>): {
-    readonly defineElement: (name: string) => void
+    new(): HTMLElement
+    readonly defineElement: () => void
     prototype: HTMLElement
 } => {
     class InitElement extends HTMLElement {
@@ -50,16 +54,27 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
          * 内部实现 ✓
          * 内部方法「所有的内部方法都要允许元素直接调用」✓
          */
-        static defineElement(name: string) {
-            customElements.define(name, this)
+        static observedAttributes = Object.keys(config.props || {})
+        static defineElement() {
+            customElements.define(config.name, this)
         }
         #props: P = {} as P
+        #propsType = (() => {
+            const types = {} as {
+                [name: string]: any
+            }
+            for (const key in config.props) {
+                types[key] = typeof config.props[key]
+            }
+            return types
+        })()
         constructor() {
             super()
             const shadowRoot = this.attachShadow({ mode: "open" })
             shadowRoot.innerHTML = config.template ?? ""
             setStyle(shadowRoot, config.style)
             const { props } = config || { props: {} }
+            this.#props = props as P
             for (const key in props) {
                 Object.defineProperty(this, key, {
                     get: () => {
@@ -67,15 +82,29 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                     },
                     set: (value) => {
                         const attr = this.getAttribute(key)
-                        const lowerCaseProp = key.toLowerCase()
-                        if (attr) {
-                            this.setAttribute(lowerCaseProp, value)
+                        let _value
+                        switch (this.#propsType[key]) {
+                            case 'number':
+                                _value = Number(value)
+                                break
+                            case 'boolean':
+                                _value = value == "true"
+                                break
+                            case 'string':
+                                _value = String(value)
+                                break
+                            default:
+                                _value = String(value)
+                                break
                         }
-                        this.#props[key] = value
+                        this.#props[key] = _value as any
+                        if (attr == value) return
+                        const lowerCaseProp = key.toLowerCase()
+                        this.setAttribute(lowerCaseProp, value)
                     }
                 })
             }
-            const exposes: M = config?.setup?.call<typeof this, any[], M>(this, [shadowRoot]) || {} as M
+            const exposes: M = config?.setup?.call<typeof this, any[], M>(this, [shadowRoot]) || ({} as M)
             for (const key in exposes) {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
                 Object.defineProperty(this, key, descriptor)

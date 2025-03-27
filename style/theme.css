@@ -1,10 +1,26 @@
+@charset "UTF-8";
+/*只允许出现theme级别变量的引用。*/
 :root {
-  --baseColor:#2EA2F9;
-  --rgbaBaseColor:#0095ff83;
-  --disabledBackgroundColor:#EFEFEF;
-  --disabledForegroundColor:#BABABA;
-  --normalButtonHoverShadow:#00000047;
-  --focusColor:#2ea1f979;
+  --m-theme-color: #2EA2F9;
+  --m-translucency-theme-color: #2ea1f9d6;
+  --m-button-borderRadius: 14px;
+  --m-button-default-backgroundColor: white;
+  --m-button-fontSize: 0.85em;
+  --m-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
+  --m-button-default-active-boxShadowColor: var(--m-translucency-theme-color);
+  --m-button-default-active-backgroundColor: var(--m-theme-color);
+  --m-button-default-active-textColor: white;
+  --m-button-default-disabled-backgroundColor: #EFEFEF;
+  --m-button-default-disabled-textColor: #BABABA;
+  --m-button-outlined-borderColor: black;
+  --m-button-outlined-hover-backgroundColor: black;
+  --m-button-outlined-hover-textColor: white;
+  --m-button-outlined-active-backgroundColor: #555555;
+  --m-button-outlined-active-borderColor: #555555;
+  --m-button-outlined-disabled-borderColor: #EFEFEF;
+  --m-button-outlined-disabled-textColor: #BABABA;
+  --m-button-text-hover-backgroundColor: #EFEFEF;
+  --m-button-text-active-backgroundColor: var(--m-theme-color);
 }
 
 body {
@@ -12,4 +28,6 @@ body {
        user-select: none;
   -webkit-user-select: none;
   -webkit-tap-highlight-color: transparent;
+  background-color: #F7F7F7;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }/*# sourceMappingURL=theme.css.map */

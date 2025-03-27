@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable enumeration processing</title>
+    <style>
+        html,body{
+            height:100%;
+        }
+        .main{
+            display: flex;
+            height:80%;
+        }
+        .main textarea {
+            width: 50%;
+            height: 100%;
+            resize: vertical;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Variable enumeration processing</h1>
+    <div class="main">
+        <textarea id="input"></textarea>
+        <textarea id="output" readonly></textarea>
+    </div>
+    <button class="copy">复制</button>
+    <script>
+        const ele = {
+            input: document.querySelector("#input"),
+            output: document.querySelector("#output"),
+            copy: document.querySelector(".copy")
+        }
+        function enumProcessing(text) {
+            let rst = text.replace(/\n/g, "")
+            rst = rst.replace(/var\(\-\-m\-theme\-color\)/g, "#2EA2F9")
+            rst = rst.replace(/var\(\-\-m\-translucency\-theme\-color\)/g, "#2ea1f9d6")
+            rst = rst.replace(/ /g, "")
+            rst = rst.replace(/\-\-m\-/g, "")
+            rst = rst.replace(/\-/g, "_")
+            rst = rst.replace(/\:/g, "=")
+            rst = rst.replace(/(.*?)\=(.*?);/g, "$1=\"$2\";")
+            const splited = rst.split(";")
+            return splited.join(",\n")
+        }
+        ele.input.addEventListener("input", () => {
+            ele.output.value = enumProcessing(ele.input.value)
+        })
+        ele.copy.onclick = () => {
+            navigator.clipboard.writeText(ele.output.value)
+        }
+    </script>
+</body>
+
+</html>
