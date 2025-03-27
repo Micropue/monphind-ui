@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mButton{
+            
+        }
+    </style>
+</head>
+
+<body>
+    <m-button>你好</m-button>
+    <div class="mButton">
+        <slot name="start"></slot>
+        <slot>你好</slot>
+        <slot name="end"></slot>
+    </div>
+    <script src="../dist/monphind.min.js"></script>
+</body>
+
+</html>

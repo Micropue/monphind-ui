@@ -1,0 +1,25 @@
+{
+  "name": "moniphindui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc\nrollup --config rollup.config.mjs"
+  },
+  "keywords": [
+    "UI",
+    "Vue",
+    "Micropue",
+    "moniphindui",
+    "components",
+    "component",
+    "micropue"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "rollup": "^4.35.0"
+  }
+}
