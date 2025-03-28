@@ -9,13 +9,16 @@ interface Config<M, P extends {
     template?: string;
     style?: string;
     props?: P;
-    setup?(shadowRoot: ShadowRoot): M;
+    dispatch?: {
+        propChanged?(key: keyof P, value: Prop): void;
+    };
+    setup?(this: HTMLElement, shadowRoot: ShadowRoot): M;
 }
 export declare const useElement: <M, P extends {
     [name: string]: Prop;
 }>(config: Config<M, P>) => {
-    new (): HTMLElement;
+    new (): HTMLElement & P & M;
     readonly defineElement: () => void;
-    prototype: HTMLElement;
+    prototype: HTMLElement & P & M;
 };
 export {};

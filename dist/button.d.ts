@@ -1,7 +1,11 @@
+type Props = {
+    type: "" | "outlined" | "text";
+    disabled: boolean;
+};
 declare const Button_base: {
-    new (): HTMLElement;
+    new (): HTMLElement & Props;
     readonly defineElement: () => void;
-    prototype: HTMLElement;
+    prototype: HTMLElement & Props;
 };
 export declare class Button extends Button_base {
 }

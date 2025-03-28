@@ -80,6 +80,7 @@ export const useElement = (config) => {
                                 break;
                         }
                         this.#props[key] = _value;
+                        config?.dispatch?.propChanged?.call?.(this, key, value);
                         if (attr == value)
                             return;
                         const lowerCaseProp = key.toLowerCase();

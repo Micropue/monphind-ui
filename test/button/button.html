@@ -10,7 +10,14 @@
 </head>
 
 <body>
-    <m-button>你好</m-button>
+    <m-button onclick="console.log('clicked')">
+        你好
+    </m-button>
+    <m-button style="border-radius: 2px;">
+        <m-icon name="user" slot="start"></m-icon>
+        Button
+        <!-- <m-icon name="password" slot="end"></m-icon> -->
+    </m-button>
     <!-- <div class="mButton" type="text" disabled="true">
         <slot name="start"></slot>
         <slot>button</slot>

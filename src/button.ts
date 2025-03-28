@@ -11,8 +11,16 @@ const style = `:host {
     border-radius: var(--m-button-borderRadius,${Theme.button_borderRadius});
     background-color: var(--m-button-default-backgroundColor,${Theme.button_default_backgroundColor});
     display: inline-flex;
+    align-items: center;
+    justify-content:space-between;
     font-size: var(--m-button-fontSize,${Theme.button_fontSize});
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
+}
+::slotted([slot=start]){
+    margin-right:10px;
+}
+::slotted([slot=end]){
+    margin-left:10px;
 }
 :host(:not([disabled=true]):hover) {
     transform: translateY(-2px);
@@ -63,6 +71,9 @@ const style = `:host {
 }
 :host([type=text][disabled=true]) {
     color: var(--m-button-outlined-disabled-textColor,${Theme.button_outlined_disabled_textColor});
+}
+:host([disabled=true]){
+    pointer-events:none;
 }`
 type Props = {
     type: "" | "outlined" | "text"
@@ -72,7 +83,7 @@ const props: Props = {
     type: "",
     disabled: false,
 }
-export class Button extends useElement<void, Props>({
+export class Button extends useElement<{}, Props>({
     name: "m-button",
     template,
     style,

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <textarea id="input"></textarea>
+    <textarea id="output"></textarea>
+    <script>
+        const ele = {
+            input: document.querySelector("#input"),
+            output: document.querySelector("#output")
+        }
+        function parse(text) {
+            let rst = ""
+            rst = text.replace(/\n/g,"")
+            rst = text.replace(/ /g,"")
+            rst = text.replace(/(.*?):(.*?);/g,"<m-icon type=\"$1\"></m-icon>\n")
+            return rst
+        }
+        ele.input.addEventListener("input", () => {
+            ele.output.value = parse(ele.input.value)
+        })
+    </script>
+</body>
+
+</html>
