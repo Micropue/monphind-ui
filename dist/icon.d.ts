@@ -25,7 +25,6 @@ declare const builtInIcons: {
 };
 interface Props {
     [name: string]: string;
-    type: string;
     name: keyof typeof builtInIcons | "";
 }
 declare const Icon_base: {

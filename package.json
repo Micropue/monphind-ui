@@ -1,8 +1,8 @@
 {
-  "name": "moniphindui",
+  "name": "monphind-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A reactive component library built on top of the Web Components API",
+  "main": "./src/main.ts",
   "scripts": {
     "build": "tsc\nrollup --config rollup.config.mjs"
   },
@@ -10,13 +10,15 @@
     "UI",
     "Vue",
     "Micropue",
-    "moniphindui",
+    "monphindui",
     "components",
     "component",
     "micropue"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Micropue",
+  "homepage": "https://monphind.micropue.com.cn/",
+  "repository": "Micropue/monphind-ui",
+  "license": "MIT",
   "type": "commonjs",
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",

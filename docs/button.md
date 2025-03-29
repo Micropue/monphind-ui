@@ -34,12 +34,20 @@
 </m-button>
 ```
 
+通过元素调用禁用或更改按钮样式
+
+```javascript
+const btn = document.querySelector("m-button")
+btn.disabled = true
+btn.type = "text"
+```
+
 属性
 
-| 名称     | 介绍     | 类型             | 同步更新DOM | 默认值 |
-| -------- | -------- | ---------------- | ----------- | ------ |
-| disabled | 是否禁用 | boolean          | 是          | false  |
-| type     | 按钮类型 | outlined \| text | 是          | ""     |
+| 名称     | 介绍     | 类型                  | 同步更新DOM | 默认值 |
+| -------- | -------- | --------------------- | ----------- | ------ |
+| disabled | 是否禁用 | boolean               | 是          | false  |
+| type     | 按钮类型 | outlined \| text \| / | 是          | ""     |
 
 插槽
 

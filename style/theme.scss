@@ -19,7 +19,24 @@
     --m-button-outlined-disabled-borderColor: #EFEFEF;
     --m-button-outlined-disabled-textColor: #BABABA;
     --m-button-text-hover-backgroundColor: #EFEFEF;
-    --m-button-text-active-backgroundColor: var(--m-theme-color);
+    --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
+    --m-icon-button-borderRadius: 50%;
+    --m-icon-button-default-backgroundColor: white;
+    --m-icon-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
+    --m-icon-button-default-active-boxShadowColor: var(--m-translucency-theme-color);
+    --m-icon-button-default-active-backgroundColor: var(--m-theme-color);
+    --m-icon-button-default-active-textColor: white;
+    --m-icon-button-default-disabled-backgroundColor: #EFEFEF;
+    --m-icon-button-default-disabled-textColor: #BABABA;
+    --m-icon-button-outlined-borderColor: black;
+    --m-icon-button-outlined-hover-backgroundColor: black;
+    --m-icon-button-outlined-hover-textColor: white;
+    --m-icon-button-outlined-active-backgroundColor: #555555;
+    --m-icon-button-outlined-active-borderColor: #555555;
+    --m-icon-button-outlined-disabled-borderColor: #EFEFEF;
+    --m-icon-button-outlined-disabled-textColor: #BABABA;
+    --m-icon-button-text-hover-backgroundColor: #EFEFEF;
+    --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
 }
 
 body {
@@ -28,4 +45,7 @@ body {
     -webkit-tap-highlight-color: transparent;
     background-color: #F7F7F7;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:not(:defined){
+    display: none;
 }

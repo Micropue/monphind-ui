@@ -3,7 +3,7 @@ import Theme from "./core/default-theme"
 
 const template =
     `<slot name="start"></slot>
-        <slot>button</slot>
+        <slot></slot>
 <slot name="end"></slot>`
 const style = `:host {
     padding: 8px 20px;

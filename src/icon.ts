@@ -43,11 +43,9 @@ const builtInIcons = {
 }
 interface Props {
     [name: string]: string
-    type: string
     name: keyof typeof builtInIcons | ""
 }
 const props: Props = {
-    type: "",
     name: ""
 }
 export class Icon extends useElement<{}, Props>({
