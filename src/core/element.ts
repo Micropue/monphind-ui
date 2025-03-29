@@ -13,7 +13,7 @@ interface Config<M, P extends {
     dispatch?: {
         propChanged?(key: keyof P, value: Prop): void
     };
-    setup?(this: HTMLElement, shadowRoot: ShadowRoot): M;
+    setup?(this: HTMLElement, shadowRoot?: ShadowRoot): M | undefined;
 }
 const baseStyle = `
     -moz-user-select: none;
@@ -110,7 +110,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                     }
                 })
             }
-            const exposes: M = config?.setup?.call<typeof this, any[], M>(this, [shadowRoot]) || ({} as M)
+            const exposes = config?.setup?.call<typeof this, any[], M | undefined>(this, [shadowRoot]) || ({} as M)
             for (const key in exposes) {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
                 Object.defineProperty(this, key, descriptor)

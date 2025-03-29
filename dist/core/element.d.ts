@@ -12,7 +12,7 @@ interface Config<M, P extends {
     dispatch?: {
         propChanged?(key: keyof P, value: Prop): void;
     };
-    setup?(this: HTMLElement, shadowRoot: ShadowRoot): M;
+    setup?(this: HTMLElement, shadowRoot?: ShadowRoot): M | undefined;
 }
 export declare const useElement: <M, P extends {
     [name: string]: Prop;

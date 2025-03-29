@@ -1,6 +1,6 @@
 import { useElement } from "./core/element";
 const template = `<slot name="start"></slot>
-        <slot>button</slot>
+        <slot></slot>
 <slot name="end"></slot>`;
 const style = `:host {
     padding: 8px 20px;
@@ -75,11 +75,19 @@ const style = `:host {
 const props = {
     type: "",
     disabled: false,
+    value: ""
 };
 export class Button extends useElement({
     name: "m-button",
     template,
     style,
+    dispatch: {
+        propChanged(key, value) {
+            if (key === 'value') {
+                this.innerText = String(value);
+            }
+        }
+    },
     props,
 }) {
 }

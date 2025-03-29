@@ -8,7 +8,6 @@ const style = `:host {
     display: inline-flex;
     align-items: center;
     justify-content:space-between;
-    font-size: var(--m-icon-button-fontSize,${"0.85em" /* Theme.icon_button_fontSize */});
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
 }
 :host(:not([disabled=true]):hover) {

@@ -1,6 +1,7 @@
 type Props = {
     type: "" | "outlined" | "text";
     disabled: boolean;
+    value: string;
 };
 declare const Button_base: {
     new (): HTMLElement & Props;

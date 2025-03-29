@@ -78,15 +78,24 @@ const style = `:host {
 type Props = {
     type: "" | "outlined" | "text"
     disabled: boolean
+    value: string
 }
 const props: Props = {
     type: "",
     disabled: false,
+    value: ""
 }
 export class Button extends useElement<{}, Props>({
     name: "m-button",
     template,
     style,
+    dispatch: {
+        propChanged(this: HTMLElement, key, value) {
+            if (key === 'value') {
+                this.innerText = String(value)
+            }
+        }
+    },
     props,
 }) { }
 Button.defineElement()
