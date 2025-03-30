@@ -93,7 +93,6 @@ declare module 'vue' {
     }
 }
 
-
 //@ts-ignore
 declare module 'vue' {
     export interface GlobalComponents {
