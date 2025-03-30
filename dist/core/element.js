@@ -30,14 +30,6 @@ const setStyle = (shadowRoot, style) => {
 };
 export const useElement = (config) => {
     class InitElement extends HTMLElement {
-        /**
-         * 定义元素 ✓
-         * 模板插入shadowRoot ✓
-         * 构建样式 ✓
-         * 动态更新属性：「所有的html属性都要允许元素调用」 ✓
-         * 内部实现 ✓
-         * 内部方法「所有的内部方法都要允许元素直接调用」✓
-         */
         static observedAttributes = Object.keys(config.props || {});
         static defineElement() {
             customElements.define(config.name, this);

@@ -10,4 +10,12 @@ declare const Button_base: {
 };
 export declare class Button extends Button_base {
 }
+declare module 'vue' {
+    interface GlobalComponents {
+    }
+}
+declare module 'vue' {
+    interface GlobalComponents {
+    }
+}
 export {};

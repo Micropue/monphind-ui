@@ -1,7 +1,4 @@
 type Prop = string | number | boolean;
-/**
- * Prop需预先定义类型，否则返回时会出错。
- */
 interface Config<M, P extends {
     [name: string]: Prop;
 }> {

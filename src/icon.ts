@@ -75,3 +75,24 @@ export class Icon extends useElement<{}, Props>({
     }
 }) { }
 Icon.defineElement()
+
+//@ts-ignore
+declare module 'vue' {
+    //@ts-ignore
+    import { HTMLAttributes } from 'vue'
+    interface GlobalComponents {
+        //@ts-ignore
+        [name]: new () => {
+            $props: HTMLAttributes & Partial<Props>
+        }
+    }
+}
+
+
+//@ts-ignore
+declare module 'vue' {
+    export interface GlobalComponents {
+        //@ts-ignore
+        [name]: typeof props
+    }
+}
