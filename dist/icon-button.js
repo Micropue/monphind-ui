@@ -1,4 +1,5 @@
 import { useElement } from "./core/element";
+const name = 'm-icon-button';
 const template = `<slot>icon</slot>`;
 const style = `:host {
     padding: 8px;
@@ -71,7 +72,8 @@ export class IconButton extends useElement({
     template,
     style,
     props,
-    name: "m-icon-button"
+    name
 }) {
 }
 IconButton.defineElement();
+import 'vue';

@@ -1,3 +1,4 @@
+declare const name = "m-icon";
 declare const builtInIcons: {
     search: string;
     home: string;
@@ -28,18 +29,17 @@ interface Props {
     name: keyof typeof builtInIcons | "";
 }
 declare const Icon_base: {
-    new (): HTMLElement & Props;
+    new (): Props & HTMLElement;
     readonly defineElement: () => void;
-    prototype: HTMLElement & Props;
+    prototype: HTMLElement;
 };
 export declare class Icon extends Icon_base {
 }
+import 'vue';
+import { Expand } from "./core/expand";
 declare module 'vue' {
     interface GlobalComponents {
-    }
-}
-declare module 'vue' {
-    interface GlobalComponents {
+        [name]: Expand<Props>;
     }
 }
 export {};

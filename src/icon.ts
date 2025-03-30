@@ -1,5 +1,5 @@
 import { useElement } from "./core/element"
-
+const name = 'm-icon'
 const template = `<slot></slot>`
 const style = `
 :host {
@@ -49,7 +49,7 @@ const props: Props = {
     name: ""
 }
 export class Icon extends useElement<{}, Props>({
-    name: "m-icon",
+    name,
     template,
     style,
     props,
@@ -76,23 +76,13 @@ export class Icon extends useElement<{}, Props>({
 }) { }
 Icon.defineElement()
 
+
+//@ts-ignore
+import 'vue'
+import { Expand } from "./core/expand"
 //@ts-ignore
 declare module 'vue' {
-    //@ts-ignore
-    import { HTMLAttributes } from 'vue'
     interface GlobalComponents {
-        //@ts-ignore
-        [name]: new () => {
-            $props: HTMLAttributes & Partial<Props>
-        }
-    }
-}
-
-
-//@ts-ignore
-declare module 'vue' {
-    export interface GlobalComponents {
-        //@ts-ignore
-        [name]: typeof props
+        [name]: Expand<Props>;
     }
 }

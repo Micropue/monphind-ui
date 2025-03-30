@@ -14,8 +14,8 @@ interface Config<M, P extends {
 export declare const useElement: <M, P extends {
     [name: string]: Prop;
 }>(config: Config<M, P>) => {
-    new (): HTMLElement & P & M;
+    new (): P & M & HTMLElement;
     readonly defineElement: () => void;
-    prototype: HTMLElement & P & M;
+    prototype: HTMLElement;
 };
 export {};

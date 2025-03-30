@@ -1,6 +1,6 @@
 import { useElement } from "./core/element"
 import Theme from "./core/default-theme"
-
+const name = 'm-button'
 const template =
     `<slot name="start"></slot>
         <slot></slot>
@@ -86,7 +86,7 @@ const props: Props = {
     value: ""
 }
 export class Button extends useElement<{}, Props>({
-    name: "m-button",
+    name,
     template,
     style,
     dispatch: {
@@ -102,21 +102,11 @@ Button.defineElement()
 
 
 //@ts-ignore
-declare module 'vue' {
-    //@ts-ignore
-    import { HTMLAttributes } from 'vue'
-    interface GlobalComponents {
-        //@ts-ignore
-        [name]: new () => {
-            $props: HTMLAttributes & Partial<Props>
-        }
-    }
-}
-
+import 'vue'
+import { Expand } from "./core/expand"
 //@ts-ignore
 declare module 'vue' {
-    export interface GlobalComponents {
-        //@ts-ignore
-        [name]: typeof props
+    interface GlobalComponents {
+        [name]: Expand<Props>;
     }
 }

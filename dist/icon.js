@@ -1,4 +1,5 @@
 import { useElement } from "./core/element";
+const name = 'm-icon';
 const template = `<slot></slot>`;
 const style = `
 :host {
@@ -43,7 +44,7 @@ const props = {
     name: ""
 };
 export class Icon extends useElement({
-    name: "m-icon",
+    name,
     template,
     style,
     props,
@@ -70,3 +71,4 @@ export class Icon extends useElement({
 }) {
 }
 Icon.defineElement();
+import 'vue';

@@ -45,9 +45,9 @@ const setStyle = (shadowRoot: ShadowRoot, style?: string): void => {
     }
 }
 export const useElement = <M, P extends { [name: string]: Prop }>(config: Config<M, P>): {
-    new(): HTMLElement & P & M
+    new():  P & M & HTMLElement
     readonly defineElement: () => void
-    prototype: HTMLElement & P & M
+    prototype: HTMLElement
 } => {
     class InitElement extends HTMLElement {
         [key: string]: any

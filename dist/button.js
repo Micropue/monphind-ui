@@ -1,4 +1,5 @@
 import { useElement } from "./core/element";
+const name = 'm-button';
 const template = `<slot name="start"></slot>
         <slot></slot>
 <slot name="end"></slot>`;
@@ -78,7 +79,7 @@ const props = {
     value: ""
 };
 export class Button extends useElement({
-    name: "m-button",
+    name,
     template,
     style,
     dispatch: {
@@ -92,3 +93,4 @@ export class Button extends useElement({
 }) {
 }
 Button.defineElement();
+import 'vue';

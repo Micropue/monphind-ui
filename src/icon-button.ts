@@ -1,6 +1,6 @@
 import { useElement } from "./core/element"
 import Theme from "./core/default-theme"
-
+const name = 'm-icon-button'
 const template = `<slot>icon</slot>`
 const style = `:host {
     padding: 8px;
@@ -77,26 +77,16 @@ export class IconButton extends useElement<{}, Props>({
     template,
     style,
     props,
-    name: "m-icon-button"
+    name
 }) { }
 IconButton.defineElement()
 
 //@ts-ignore
-declare module 'vue' {
-    //@ts-ignore
-    import { HTMLAttributes } from 'vue'
-    interface GlobalComponents {
-        //@ts-ignore
-        [name]: new () => {
-            $props: HTMLAttributes & Partial<Props>
-        }
-    }
-}
-
+import 'vue'
+import { Expand } from "./core/expand"
 //@ts-ignore
 declare module 'vue' {
-    export interface GlobalComponents {
-        //@ts-ignore
-        [name]: typeof props
+    interface GlobalComponents {
+        [name]: Expand<Props>;
     }
 }

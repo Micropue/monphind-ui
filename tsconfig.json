@@ -8,6 +8,7 @@
     "module": "ESNext", /* Specify what module code is generated. */
     "rootDir": "./src", /* Specify the root folder within your source files. */
     /* JavaScript Support */
+    "emitDeclarationOnly": false,
     /* Emit */
     "declaration": true, /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     "outDir": "./dist", /* Specify an output folder for all emitted files. */
