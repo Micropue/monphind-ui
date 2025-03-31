@@ -37,6 +37,13 @@ const enum Theme {
     icon_button_outlined_disabled_textColor = "#BABABA",
     icon_button_text_hover_backgroundColor = "#EFEFEF",
     icon_button_text_active_backgroundColor = "#2EA2F9",
-
+    fab_backgroundColor = "white",
+    fab_hover_boxShadowColor = "rgba(70,70,70,0.237)",
+    fab_hover_backgroundColor = "rgb(247,247,247)",
+    fab_active_backgroundColor = "#2EA2F9",
+    fab_active_color = "white",
+    fab_active_boxShadowColor = "#2ea1f9d6",
+    fab_disabled_backgroundColor = "#EFEFEF",
+    fab_disabled_textColor = "#BABABA",
 }
 export default Theme

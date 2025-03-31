@@ -38,6 +38,14 @@
   --m-icon-button-outlined-disabled-textColor: #BABABA;
   --m-icon-button-text-hover-backgroundColor: #EFEFEF;
   --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
+  --m-fab-backgroundColor: white;
+  --m-fab-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
+  --m-fab-hover-backgroundColor: rgb(247, 247, 247);
+  --m-fab-active-backgroundColor: var(--m-theme-color);
+  --m-fab-active-color: white;
+  --m-fab-active-boxShadowColor: var(--m-translucency-theme-color);
+  --m-fab-disabled-backgroundColor: #EFEFEF;
+  --m-fab-disabled-textColor: #BABABA;
 }
 
 body {
