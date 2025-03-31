@@ -1,8 +1,8 @@
 {
   "name": "monphind-ui",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A reactive component library built on top of the Web Components API",
-  "main": "./dist/main.ts",
+  "main": "./dist/main.js",
   "scripts": {
     "build": "tsc\nrollup --config rollup.config.mjs"
   },
