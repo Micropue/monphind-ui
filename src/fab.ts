@@ -51,3 +51,13 @@ export class FAB extends useElement({
 }) { }
 FAB.defineElement()
 
+
+//@ts-ignore
+import 'vue'
+import { Expand } from "./core/expand"
+//@ts-ignore
+declare module 'vue' {
+    interface GlobalComponents {
+        [name]: Expand<Props>;
+    }
+}

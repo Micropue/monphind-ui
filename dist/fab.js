@@ -45,3 +45,4 @@ export class FAB extends useElement({
 }) {
 }
 FAB.defineElement();
+import 'vue';
