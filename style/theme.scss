@@ -45,6 +45,11 @@
     --m-fab-active-boxShadowColor: var(--m-translucency-theme-color);
     --m-fab-disabled-backgroundColor: #EFEFEF;
     --m-fab-disabled-textColor: #BABABA;
+    --m-checkbox-borderColor: black;
+    --m-checkbox-checked-color: var(--m-theme-color);
+    --m-checkbox-checked-svg-color: white;
+    --m-checkbox-disabled-color: #BABABA;
+    --m-checkbox-checked-indeterminate-color:rgb(131 130 130);
 }
 
 body {

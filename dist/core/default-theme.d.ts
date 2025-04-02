@@ -44,6 +44,11 @@ declare const enum Theme {
     fab_active_color = "white",
     fab_active_boxShadowColor = "#2ea1f9d6",
     fab_disabled_backgroundColor = "#EFEFEF",
-    fab_disabled_textColor = "#BABABA"
+    fab_disabled_textColor = "#BABABA",
+    checkbox_borderColor = "black",
+    checkbox_checked_color = "#2EA2F9",
+    checkbox_checked_svg_color = "white",
+    checkbox_disabled_color = "#BABABA",
+    checkbox_checked_indeterminate_color = "rgb(131130130)"
 }
 export default Theme;
