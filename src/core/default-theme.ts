@@ -50,5 +50,8 @@ const enum Theme {
     checkbox_checked_svg_color = "white",
     checkbox_disabled_color = "#BABABA",
     checkbox_checked_indeterminate_color = "rgb(131,130,130)",
+    radio_borderColor = "black",
+    radio_checked_color = "#2EA2F9",
+    radio_disabled_color = "#BABABA",
 }
 export default Theme

@@ -82,6 +82,11 @@ export class Button extends useElement({
     name,
     template,
     style,
+    syncProps: [
+        "disabled",
+        "type",
+        "value"
+    ],
     dispatch: {
         propChanged(key, value) {
             if (key === 'value') {

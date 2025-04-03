@@ -10,10 +10,11 @@ interface Config<M, P extends {
     template?: string;
     style?: string;
     props?: P;
+    syncProps?: (keyof P)[]
     dispatch?: {
         propChanged?(key: keyof P, value: Prop): void
     };
-    setup?(this: HTMLElement, shadowRoot?: ShadowRoot): M | undefined;
+    setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
 }
 const baseStyle = `
     -moz-user-select: none;
@@ -21,31 +22,27 @@ const baseStyle = `
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
 `
+
+const initBaseStyle = function (shadowRoot: ShadowRoot): void {
+    const sheet = new CSSStyleSheet()
+    sheet.replaceSync(baseStyle)
+    shadowRoot.adoptedStyleSheets.push(sheet)
+}
 const setStyle = (shadowRoot: ShadowRoot, style?: string): void => {
     try {
-        const initbase = () => {
-            const sheet = new CSSStyleSheet()
-            sheet.replaceSync(baseStyle)
-            shadowRoot.adoptedStyleSheets.push(sheet)
-        }
-        initbase()
+        initBaseStyle(shadowRoot)
         const sheet = new CSSStyleSheet()
         sheet.replaceSync(style ?? "")
         shadowRoot.adoptedStyleSheets.push(sheet)
     } catch {
-        const initbase = () => {
-            const styleEle = document.createElement("style")
-            styleEle.textContent = baseStyle
-            shadowRoot.insertBefore(styleEle, shadowRoot.firstChild)
-        }
-        initbase()
+        initBaseStyle(shadowRoot)
         const styleEle = document.createElement("style")
         styleEle.textContent = style ?? ""
         shadowRoot.insertBefore(styleEle, shadowRoot.firstChild)
     }
 }
 export const useElement = <M, P extends { [name: string]: Prop }>(config: Config<M, P>): {
-    new():  P & M & HTMLElement
+    new(): P & M & HTMLElement
     readonly defineElement: () => void
     prototype: HTMLElement
 } => {
@@ -79,7 +76,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
             shadowRoot.innerHTML = config.template ?? ""
             setStyle(shadowRoot, config.style)
             const { props } = config || { props: {} }
-            this.#props = props as P
+            this.#props = { ...props } as P
             for (const key in props) {
                 Object.defineProperty(this, key, {
                     get: () => {
@@ -106,11 +103,12 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                         config?.dispatch?.propChanged?.call?.<typeof this, any, void>(this, key, value)
                         if (attr == value) return
                         const lowerCaseProp = key.toLowerCase()
-                        this.setAttribute(lowerCaseProp, value)
+                        if (config.syncProps?.includes(key))
+                            this.setAttribute(lowerCaseProp, value)
                     }
                 })
             }
-            const exposes = config?.setup?.call<typeof this, any[], M | undefined>(this, [shadowRoot]) || ({} as M)
+            const exposes = config?.setup?.call<typeof this & P, any[], M | undefined>(this as any, [shadowRoot]) || ({} as M)
             for (const key in exposes) {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
                 Object.defineProperty(this, key, descriptor)

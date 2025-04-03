@@ -4,25 +4,20 @@ const baseStyle = `
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
 `;
+const initBaseStyle = function (shadowRoot) {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(baseStyle);
+    shadowRoot.adoptedStyleSheets.push(sheet);
+};
 const setStyle = (shadowRoot, style) => {
     try {
-        const initbase = () => {
-            const sheet = new CSSStyleSheet();
-            sheet.replaceSync(baseStyle);
-            shadowRoot.adoptedStyleSheets.push(sheet);
-        };
-        initbase();
+        initBaseStyle(shadowRoot);
         const sheet = new CSSStyleSheet();
         sheet.replaceSync(style ?? "");
         shadowRoot.adoptedStyleSheets.push(sheet);
     }
     catch {
-        const initbase = () => {
-            const styleEle = document.createElement("style");
-            styleEle.textContent = baseStyle;
-            shadowRoot.insertBefore(styleEle, shadowRoot.firstChild);
-        };
-        initbase();
+        initBaseStyle(shadowRoot);
         const styleEle = document.createElement("style");
         styleEle.textContent = style ?? "";
         shadowRoot.insertBefore(styleEle, shadowRoot.firstChild);
@@ -48,7 +43,7 @@ export const useElement = (config) => {
             shadowRoot.innerHTML = config.template ?? "";
             setStyle(shadowRoot, config.style);
             const { props } = config || { props: {} };
-            this.#props = props;
+            this.#props = { ...props };
             for (const key in props) {
                 Object.defineProperty(this, key, {
                     get: () => {
@@ -76,7 +71,8 @@ export const useElement = (config) => {
                         if (attr == value)
                             return;
                         const lowerCaseProp = key.toLowerCase();
-                        this.setAttribute(lowerCaseProp, value);
+                        if (config.syncProps?.includes(key))
+                            this.setAttribute(lowerCaseProp, value);
                     }
                 });
             }

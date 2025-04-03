@@ -48,6 +48,9 @@ export class Icon extends useElement({
     template,
     style,
     props,
+    syncProps: [
+        "name"
+    ],
     dispatch: {
         propChanged(key, value) {
             if (key == 'name') {

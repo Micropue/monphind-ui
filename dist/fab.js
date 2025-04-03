@@ -41,7 +41,10 @@ export class FAB extends useElement({
     name,
     style,
     template,
-    props
+    props,
+    syncProps: [
+        "disabled"
+    ],
 }) {
 }
 FAB.defineElement();

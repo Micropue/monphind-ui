@@ -106,7 +106,12 @@ export class Checkbox extends useElement<{}, Props>({
             this.dispatchEvent(new Event("change"))
         })
         return {}
-    }
+    },
+    syncProps:[
+        "disabled",
+        "indeterminate",
+        "value"
+    ]
 }) { }
 Checkbox.defineElement()
 //@ts-ignore

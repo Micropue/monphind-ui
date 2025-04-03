@@ -50,7 +50,10 @@
   --m-checkbox-checked-color: var(--m-theme-color);
   --m-checkbox-checked-svg-color: white;
   --m-checkbox-disabled-color: #BABABA;
-  --m-checkbox-checked-indeterminate-color:rgb(131 130 130);
+  --m-checkbox-checked-indeterminate-color: rgb(131 130 130);
+  --m-radio-borderColor: black;
+  --m-radio-checked-color:var(--m-theme-color);
+  --m-radio-disabled-color:#BABABA;
 }
 
 body {

@@ -100,7 +100,12 @@ export class Checkbox extends useElement({
             this.dispatchEvent(new Event("change"));
         });
         return {};
-    }
+    },
+    syncProps: [
+        "disabled",
+        "indeterminate",
+        "value"
+    ]
 }) {
 }
 Checkbox.defineElement();

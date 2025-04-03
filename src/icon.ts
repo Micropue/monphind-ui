@@ -53,6 +53,9 @@ export class Icon extends useElement<{}, Props>({
     template,
     style,
     props,
+    syncProps:[
+        "name"
+    ],
     dispatch: {
         propChanged(this: HTMLElement, key: keyof Props, value: string) {
             if (key == 'name') {

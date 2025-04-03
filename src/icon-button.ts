@@ -77,7 +77,11 @@ export class IconButton extends useElement<{}, Props>({
     template,
     style,
     props,
-    name
+    name,
+    syncProps:[
+        "disabled",
+        "type"
+    ]
 }) { }
 IconButton.defineElement()
 

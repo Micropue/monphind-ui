@@ -22,7 +22,7 @@
 自定义样式
 
 ```css
-m-checkbox[checked=true]{
+m-checkbox[value=true]{
 	border-radius:10px;
 }
 ```
