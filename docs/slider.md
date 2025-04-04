@@ -46,7 +46,7 @@ slider.value = 10
 
 > [!TIP]
 >
-> `value`值设置超出`max`或低于`min`时，会抛出错误。
+> `value`值设置超出`max`或低于`min`时，会自动修正。
 
 属性列表
 

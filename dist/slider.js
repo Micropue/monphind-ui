@@ -112,17 +112,21 @@ export class Slider extends useElement({
             if (key === "value") {
                 const min = Number(this.getAttribute("min") ?? "") || 0;
                 const max = Number(this.getAttribute("max") ?? "") || 100;
-                const rst = Number(value) / (max - min) * 100;
-                if (rst > 100 || rst < 0) {
-                    throw new RangeError(`You may be above or below the maximum (max) or minimum (min) values. The value is: ${value}`);
-                }
+                let v = Number(value);
+                if (v < min)
+                    v = min;
+                if (v > max)
+                    v = max;
+                const rst = (v - min) / (max - min) * 100;
                 const ele = this.shadowRoot?.querySelector(".slider");
                 ele.style.width = `${rst}%`;
                 const displayValueEles = {
                     hiddened: this.shadowRoot?.querySelector(".hidden-value"),
                     normal: this.shadowRoot?.querySelector(".value"),
                 };
-                displayValue(displayValueEles, min, max, Number(value), this.labeled);
+                displayValue(displayValueEles, min, max, v, this.labeled);
+                if (this.value !== v)
+                    this.value = v;
             }
         }
     }, setup() {
@@ -133,7 +137,8 @@ export class Slider extends useElement({
         const max = Number(this.getAttribute("max") ?? "") || 100;
         const step = Number(this.getAttribute("step") ?? "") || 1;
         const labeled = (this.getAttribute("labeled") == "true" ? true : false) || false;
-        const value = Number(this.getAttribute("value") ?? "") || 0;
+        const valueAttr = this.getAttribute("value");
+        const value = valueAttr !== null ? Number(valueAttr) : min;
         touchslider.style.width = `${value / (max - min)}%`;
         const displayValueEles = {
             hiddened: this.shadowRoot?.querySelector(".hidden-value"),
