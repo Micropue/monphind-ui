@@ -81,7 +81,7 @@ radio.addEventListerner("change",()=>{
 | 名称     | 介绍                                          | 类型    | DOM同步 | 默认值 |
 | -------- | --------------------------------------------- | ------- | ------- | ------ |
 | value    | 组内被选中的元素的`value`值或Radio的`value`值 | string  | 否      | ""     |
-| name     | 用于生命组                                    | string  | 是      | 无     |
+| name     | 用于生明组                                    | string  | 是      | 无     |
 | disabled | 是否禁用                                      | boolean | 是      | false  |
 | checked  | 是否选中                                      | boolean | 是      | False  |
 

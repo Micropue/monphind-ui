@@ -12,7 +12,7 @@ interface Config<M, P extends {
     props?: P;
     syncProps?: (keyof P)[]
     dispatch?: {
-        propChanged?(key: keyof P, value: Prop): void
+        propChanged?(this: HTMLElement & P, key: keyof P, value: Prop): void
     };
     setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
 }
@@ -100,7 +100,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                                 break
                         }
                         this.#props[key] = _value as any
-                        config?.dispatch?.propChanged?.call?.<typeof this, any, void>(this, key, value)
+                        config?.dispatch?.propChanged?.call?.<typeof this & P, any, void>(this as typeof this & P, key, value)
                         if (attr == value) return
                         const lowerCaseProp = key.toLowerCase()
                         if (config.syncProps?.includes(key))

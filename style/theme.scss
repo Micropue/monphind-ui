@@ -49,10 +49,14 @@
     --m-checkbox-checked-color: var(--m-theme-color);
     --m-checkbox-checked-svg-color: white;
     --m-checkbox-disabled-color: #BABABA;
-    --m-checkbox-checked-indeterminate-color: rgb(131 130 130);
+    --m-checkbox-checked-indeterminate-color: rgb(131, 130, 130);
     --m-radio-borderColor: black;
-    --m-radio-checked-color:var(--m-theme-color);
-    --m-radio-disabled-color:#BABABA;
+    --m-radio-checked-color: var(--m-theme-color);
+    --m-radio-disabled-color: #BABABA;
+    --m-slider-backgroundColor: #EFEFEF;
+    --m-slider-slider-backgroundColor: var(--m-theme-color);
+    --m-slider-hiddenlabel-color: gray;
+    --m-slider-label-color: rgb(255, 255, 255);
 }
 
 body {

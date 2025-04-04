@@ -52,6 +52,10 @@ declare const enum Theme {
     checkbox_checked_indeterminate_color = "rgb(131,130,130)",
     radio_borderColor = "black",
     radio_checked_color = "#2EA2F9",
-    radio_disabled_color = "#BABABA"
+    radio_disabled_color = "#BABABA",
+    slider_backgroundColor = "#EFEFEF",
+    slider_slider_backgroundColor = "#2EA2F9",
+    slider_hiddenlabel_color = "gray",
+    slider_label_color = "rgb(255,255,255)"
 }
 export default Theme;

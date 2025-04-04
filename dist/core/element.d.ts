@@ -8,7 +8,7 @@ interface Config<M, P extends {
     props?: P;
     syncProps?: (keyof P)[];
     dispatch?: {
-        propChanged?(key: keyof P, value: Prop): void;
+        propChanged?(this: HTMLElement & P, key: keyof P, value: Prop): void;
     };
     setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
 }
