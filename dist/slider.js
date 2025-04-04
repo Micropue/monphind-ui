@@ -52,7 +52,7 @@ const style = `:host {
     width: 0%;
     height: 100%;
     border-radius: 12px;
-    background-color: var(--m-slider-slider-backgroundColor,${"#EFEFEF"});
+    background-color: var(--m-slider-slider-backgroundColor,${"#2EA2F9"});
     position: relative;
 }
 :host .slider .slider-bar {
