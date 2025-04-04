@@ -53,7 +53,7 @@ const style = `:host {
     width: 0%;
     height: 100%;
     border-radius: 12px;
-    background-color: var(--m-slider-slider-backgroundColor,${Theme.slider_backgroundColor});
+    background-color: var(--m-slider-slider-backgroundColor,${Theme.slider_slider_backgroundColor});
     position: relative;
 }
 :host .slider .slider-bar {
