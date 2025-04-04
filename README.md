@@ -53,3 +53,8 @@ input.addEventListener("input",()=>{
 })
 ```
 
+## 文档
+
+点击链接：[monphind-ui/docs/](https://github.com/Micropue/monphind-ui/tree/main/docs)
+
+不久后会推出官方版文档网站。
