@@ -114,20 +114,18 @@ export class Slider extends useElement<{}, Props>({
     ], dispatch: {
         propChanged(key, value) {
             if (key === "value") {
-                const min = this.min
-                const max = this.max
                 let v = Number(value)
-                if (v < min) v = min
-                if (v > max) v = max
+                if (v < this.min) v = this.min
+                if (v > this.max) v = this.max
 
-                const rst = (v - min) / (max - min) * 100
+                const rst = (v - this.min) / (this.max - this.min) * 100
                 const ele = this.shadowRoot?.querySelector(".slider") as HTMLElement
                 ele.style.width = `${rst}%`
                 const displayValueEles = {
                     hiddened: this.shadowRoot?.querySelector(".hidden-value") as HTMLElement,
                     normal: this.shadowRoot?.querySelector(".value") as HTMLElement,
                 }
-                displayValue(displayValueEles, min, max, v, this.labeled)
+                displayValue(displayValueEles, this.min, this.max, v, this.labeled)
                 if (this.value !== v) this.value = v
             }
         }
@@ -142,7 +140,7 @@ export class Slider extends useElement<{}, Props>({
             normal: this.shadowRoot?.querySelector(".value") as HTMLElement,
         }
         setTimeout(()=>{
-            displayValue(displayValueEles, this.min, this.max, value, this.labeled)
+            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled)
         })
         let beforeWidth: number
         this?.addEventListener("mousedown", (e: any) => {

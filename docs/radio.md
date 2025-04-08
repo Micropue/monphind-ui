@@ -33,57 +33,38 @@ m-radio[checked=true]{
 ```js
 const radio = document.querySelector("m-radio")
 radio.checked = true
-radio.value = 1
 ```
 
 > [!WARNING]
 >
 > 动态修改属性并不会触发`change`事件
 
-事件监听
+Vue数据绑定
 
-```javascript
-const radio = document.querySelector("m-radio")
-radio.addEventListerner("change",()=>{
-  console.log(radio.value)
-})
+```vue
+<template>
+	<m-radio value="item1" checked="true" v-model.lazy="radioValue" type="radio">item1</m-radio>
+	<m-radio value="item2" v-model.lazy="radioValue" type="radio">item2</m-radio>
+	<m-radio value="item3" v-model.lazy="radioValue" type="radio">item3</m-radio>
+</template>
+<script setup>
+import { ref } from 'vue'
+const radioValue = ref('item1')
+</script>
 ```
-
-> [!TIP]
->
-> 相同的组（相同`name`）绑定数据时不需要为每个`radio`绑定，只为单个绑定即可。只能手动绑定，无法使用`v-model`。
->
-> 示例：
->
-> ```vue
-> <template>
-> 	<m-radio name="group" @change="changed" ref="radio" :value.attr="1"></m-radio>
-> 	<m-radio name="group" :value.attr="2"></m-radio>
-> 	<m-radio name="group" :value.attr="3"></m-radio>
-> </template>
-> <script setup>
-> 	import { ref } from 'vue';
->   	const radio = ref(null)
-> 	const changed = ()=>{
->     console.log(radio.value)
->   }
-> </script>
-> ```
-
-组件中元素的` value`属性会被动态修改（不是html属性），如果你修改了`value`属性也会同时改变组内`radio`的选中状态
 
 > [!CAUTION]
 >
-> 经测试，`v-model`不可用。在vue模板中使用`v-model`会合并`value`属性导致组件的`value`属性在编译后消失。必须使用`v-bind`绑定动态的`value`。
+> 由于`m-radio`使用`checked`标注选择项，请务必设置`type=radio`属性，否则`vue`的`v-model`会当做默认处理。
 
 属性
 
-| 名称     | 介绍                                          | 类型    | DOM同步 | 默认值 |
-| -------- | --------------------------------------------- | ------- | ------- | ------ |
-| value    | 组内被选中的元素的`value`值或Radio的`value`值 | string  | 否      | ""     |
-| name     | 用于生明组                                    | string  | 是      | 无     |
-| disabled | 是否禁用                                      | boolean | 是      | false  |
-| checked  | 是否选中                                      | boolean | 是      | False  |
+| 名称     | 介绍            | 类型    | DOM同步 | 默认值 |
+| -------- | --------------- | ------- | ------- | ------ |
+| value    | 元素的`value`值 | string  | 是      | ""     |
+| name     | 用于生明组      | string  | 是      | 无     |
+| disabled | 是否禁用        | boolean | 是      | false  |
+| checked  | 是否选中        | boolean | 是      | False  |
 
 元素事件
 

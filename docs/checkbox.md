@@ -3,7 +3,7 @@
 复选框，可以用于替代原生`checkbox`
 
 ```html
-<m-checkbox value="true"></m-checkbox>
+<m-checkbox checked="true"></m-checkbox>
 <m-checkbox indeterminate="true"></m-checkbox><!--未知样式-->
 ```
 
@@ -22,7 +22,7 @@
 自定义样式
 
 ```css
-m-checkbox[value=true]{
+m-checkbox[checked=true]{
 	border-radius:10px;
 }
 ```
@@ -31,7 +31,7 @@ m-checkbox[value=true]{
 
 ```js
 const checkbox = document.querySelector("m-checkbox")
-checkbox.value = true
+checkbox.checked = true
 ```
 
 事件监听
@@ -39,7 +39,7 @@ checkbox.value = true
 ```javascript
 const checkbox = document.querySelector("m-checkbox")
 checkbox.addEventListerner("change",()=>{
-  console.log(checkbox.value)
+  console.log(checkbox.checked)
 })
 ```
 
@@ -47,7 +47,7 @@ checkbox.addEventListerner("change",()=>{
 
 ```vue
 <template>
-	<m-checkbox v-model.lazy="checked"></m-checkbox>
+	<m-checkbox v-model.lazy="checked" type="checkbox"></m-checkbox>
 </template>
 <script setup>
 	import { ref } from 'vue';
@@ -82,7 +82,7 @@ checkbox.addEventListerner("change",()=>{
 
 | 名称          | 介绍             | 类型    | DOM同步 | 默认值 |
 | ------------- | ---------------- | ------- | ------- | ------ |
-| value         | 复选框是否被选中 | boolean | 是      | false  |
+| checked       | 复选框是否被选中 | boolean | 是      | false  |
 | indeterminate | 是否未知         | boolean | 是      | false  |
 | disabled      | 是否禁用         | boolean | 是      | false  |
 
