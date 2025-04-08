@@ -121,8 +121,8 @@ css变量
 
 css变量
 
-| 名称 | 默认值 |
-| ---- | ------ |
-|      |        |
-|      |        |
+| 名称                                             | 默认值   |
+| ------------------------------------------------ | -------- |
+| --m-segmented-button-item-hover-backgroundColor  | \#F2F2F2 |
+| --m-segmented-button-item-active-backgroundColor | \#e2e2e2 |
 
