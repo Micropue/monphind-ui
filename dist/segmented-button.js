@@ -53,7 +53,6 @@ export class SegmentedButton extends useElement({
     name, style, template, syncProps: ["value"], props, dispatch: {
         propChanged(key, value) {
             if (key === 'value') {
-                this.value = String(value);
                 const allItems = this.querySelectorAll("m-segmented-button-item");
                 for (const i in allItems) {
                     if (allItems[i].value == value) {
@@ -199,7 +198,7 @@ export class SegmentedButtonItem extends useElement({
     props: itemProps,
     style: itemStyle,
     template: itemTemplate,
-    syncProps: ["value"],
+    syncProps: ["disabled"],
 }) {
 }
 SegmentedButtonItem.defineElement();
