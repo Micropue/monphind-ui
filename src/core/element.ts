@@ -1,5 +1,6 @@
 //元素定义：元素名字，元素的模板，元素样式，元素方法，元素实现
-type Prop = string | number | boolean
+type Prop = string | number | boolean | null
+type CommonThis<P> = HTMLElement & P
 /**
  * Prop需预先定义类型，否则返回时会出错。
  */
@@ -12,16 +13,18 @@ interface Config<M, P extends {
     props?: P;
     syncProps?: (keyof P)[]
     dispatch?: {
-        propChanged?(this: HTMLElement & P, key: keyof P, value: Prop): void
+        propChanged?(this: CommonThis<P>, key: keyof P, value: Prop): void
+        connected?(this: CommonThis<P>): void
+        disconnected?(this: CommonThis<P>): void
     };
     setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
 }
-const baseStyle = `
+const baseStyle = `:host{
     -moz-user-select: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
-`
+}`
 
 const initBaseStyle = function (shadowRoot: ShadowRoot): void {
     const sheet = new CSSStyleSheet()
@@ -99,8 +102,10 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                                 _value = String(value)
                                 break
                         }
-                        this.#props[key] = _value as any
-                        config?.dispatch?.propChanged?.call?.<typeof this & P, any, void>(this as typeof this & P, key, value)
+                        if (this.#props[key] != value){
+                            this.#props[key] = _value as any
+                            config?.dispatch?.propChanged?.call?.<typeof this & P, any, void>(this as typeof this & P, key, value)
+                        }
                         if (attr == value) return
                         const lowerCaseProp = key.toLowerCase()
                         if (config.syncProps?.includes(key))
@@ -113,6 +118,12 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
                 Object.defineProperty(this, key, descriptor)
             }
+        }
+        connectedCallback() {
+            config.dispatch?.connected?.call(this as unknown as HTMLElement & P)
+        }
+        disconnectedCallback() {
+            config.dispatch?.disconnected?.call(this as unknown as HTMLElement & P)
         }
         attributeChangedCallback(key: string, oldValue: unknown, newValue: string | null) {
             this[key] = newValue ?? ""
