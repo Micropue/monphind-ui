@@ -5,3 +5,4 @@ export * from './fab';
 export * from './checkbox';
 export * from './radio';
 export * from './slider';
+export * from './segmented-button';

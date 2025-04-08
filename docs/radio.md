@@ -101,7 +101,7 @@ css变量
 
 | 名称                     | 默认值          |
 | ------------------------ | --------------- |
-| ---m-radio-borderColor   | black           |
+| --m-radio-borderColor    | black           |
 | --m-radio-checked-color  | --m-theme-color |
 | --m-radio-disabled-color | #BABABA         |
 

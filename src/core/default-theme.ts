@@ -57,6 +57,10 @@ const enum Theme {
     slider_slider_backgroundColor = "#2EA2F9",
     slider_hiddenlabel_color = "gray",
     slider_label_color = "rgb(255,255,255)",
-
+    segmented_button_backgroundColor = "white",
+    segmented_button_slider_backgroundColor = "#2EA2F9",
+    segmented_button_item_hover_backgroundColor = "#F2F2F2",
+    segmented_button_item_active_backgroundColor = "#e2e2e2",
+    segmented_button_slider_hover_boxShadowColor = "#2ea1f9d6",
 }
 export default Theme

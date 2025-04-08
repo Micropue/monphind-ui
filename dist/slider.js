@@ -90,7 +90,7 @@ const props = {
 const displayValue = (displayValueEles, min, max, value, labeled) => {
     if (!labeled)
         return;
-    const centerValue = (max - min) * 0.5;
+    const centerValue = (max - min) * 0.5 + min;
     displayValueEles.hiddened.textContent = `${value}/${max}`;
     displayValueEles.normal.textContent = `${value}/${max}`;
     if (value < centerValue) {
@@ -139,7 +139,7 @@ export class Slider extends useElement({
         const labeled = (this.getAttribute("labeled") == "true" ? true : false) || false;
         const valueAttr = this.getAttribute("value");
         const value = valueAttr !== null ? Number(valueAttr) : min;
-        touchslider.style.width = `${value / (max - min)}%`;
+        touchslider.style.width = `${(value - min) / (max - min) * 100}%`;
         const displayValueEles = {
             hiddened: this.shadowRoot?.querySelector(".hidden-value"),
             normal: this.shadowRoot?.querySelector(".value"),
@@ -165,7 +165,8 @@ export class Slider extends useElement({
             else if (result <= 0)
                 result = 0;
             touchslider.style.width = `${result}%`;
-            this.value = Number((Math.round((max / step) * result / 100) * step + min).toFixed(2));
+            const _value = Number((Math.round((max - min) * result / 100 / step) * step + min).toFixed(2));
+            this.value = _value > max ? max : _value;
             displayValue(displayValueEles, min, max, this.value, this.labeled);
             this.dispatchEvent(new Event("input"));
         });
@@ -176,7 +177,6 @@ export class Slider extends useElement({
         });
         document?.addEventListener("touchend", () => is_mousedown = false);
         document?.addEventListener("touchmove", (e) => {
-            TouchEvent;
             if (!is_mousedown)
                 return;
             const { width, left } = this.getBoundingClientRect();
@@ -189,7 +189,8 @@ export class Slider extends useElement({
             else if (result <= 0)
                 result = 0;
             touchslider.style.width = `${result}%`;
-            this.value = Number((Math.round((max / step) * result / 100) * step + min).toFixed(2));
+            const _value = Number((Math.round((max - min) * result / 100 / step) * step + min).toFixed(2));
+            this.value = _value > max ? max : _value;
             displayValue(displayValueEles, min, max, this.value, this.labeled);
             this.dispatchEvent(new Event("input"));
         });

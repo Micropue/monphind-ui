@@ -58,6 +58,11 @@
   --m-slider-slider-backgroundColor: var(--m-theme-color);
   --m-slider-hiddenlabel-color: gray;
   --m-slider-label-color: rgb(255, 255, 255);
+  --m-segmented-button-backgroundColor:white;
+  --m-segmented-button-slider-backgroundColor:var(--m-theme-color);
+  --m-segmented-button-slider-hover-boxShadowColor:var(--m-translucency-theme-color);
+  --m-segmented-button-item-hover-backgroundColor:#F2F2F2;
+  --m-segmented-button-item-active-backgroundColor:#e2e2e2;
 }
 
 body {

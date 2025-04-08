@@ -1,9 +1,9 @@
-const baseStyle = `
+const baseStyle = `:host{
     -moz-user-select: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
-`;
+}`;
 const initBaseStyle = function (shadowRoot) {
     const sheet = new CSSStyleSheet();
     sheet.replaceSync(baseStyle);
@@ -66,8 +66,10 @@ export const useElement = (config) => {
                                 _value = String(value);
                                 break;
                         }
-                        this.#props[key] = _value;
-                        config?.dispatch?.propChanged?.call?.(this, key, value);
+                        if (this.#props[key] != value) {
+                            this.#props[key] = _value;
+                            config?.dispatch?.propChanged?.call?.(this, key, value);
+                        }
                         if (attr == value)
                             return;
                         const lowerCaseProp = key.toLowerCase();
@@ -81,6 +83,12 @@ export const useElement = (config) => {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key);
                 Object.defineProperty(this, key, descriptor);
             }
+        }
+        connectedCallback() {
+            config.dispatch?.connected?.call(this);
+        }
+        disconnectedCallback() {
+            config.dispatch?.disconnected?.call(this);
         }
         attributeChangedCallback(key, oldValue, newValue) {
             this[key] = newValue ?? "";

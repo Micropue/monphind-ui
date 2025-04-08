@@ -1,4 +1,5 @@
-type Prop = string | number | boolean;
+type Prop = string | number | boolean | null;
+type CommonThis<P> = HTMLElement & P;
 interface Config<M, P extends {
     [name: string]: Prop;
 }> {
@@ -8,7 +9,9 @@ interface Config<M, P extends {
     props?: P;
     syncProps?: (keyof P)[];
     dispatch?: {
-        propChanged?(this: HTMLElement & P, key: keyof P, value: Prop): void;
+        propChanged?(this: CommonThis<P>, key: keyof P, value: Prop): void;
+        connected?(this: CommonThis<P>): void;
+        disconnected?(this: CommonThis<P>): void;
     };
     setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
 }
