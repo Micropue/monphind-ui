@@ -49,26 +49,26 @@ bottom: 0;
 left: 0;
 right: 0;
 }
-:host([value=true]:not([indeterminate=true])) .checkbox {
+:host([checked=true]:not([indeterminate=true])) .checkbox {
 border: 2px solid var(--m-checkbox-checked-color,${"#2EA2F9"});
 background-color: var(--m-checkbox-checked-color,${"#2EA2F9"});
 }
-:host([value=true]:not([indeterminate=true])) .checked {
+:host([checked=true]:not([indeterminate=true])) .checked {
 transform: scale(1);
 opacity: 1;
 }
-:host([value=true]:not([indeterminate=true])) slot {
+:host([checked=true]:not([indeterminate=true])) slot {
 color: var(--m-checkbox-checked-color,${"#2EA2F9"});
 }
-:host([value=true][indeterminate=true]) .checkbox {
+:host([checked=true][indeterminate=true]) .checkbox {
 border: 2px solid var(--m-checkbox-checked-indeterminate-color,${"rgb(131,130,130)"});
 background-color: var(--m-checkbox-checked-indeterminate-color,${"rgb(131,130,130)"});
 }
-:host([value=true][indeterminate=true]) .indeterminate {
+:host([checked=true][indeterminate=true]) .indeterminate {
 transform: scale(1);
 opacity: 1;
 }
-:host([value=true][indeterminate=true]) slot {
+:host([checked=true][indeterminate=true]) slot {
 color: var(--m-checkbox-checked-indeterminate-color,${"rgb(131,130,130)"});
 }
 :host([disabled=true]) {
@@ -78,14 +78,14 @@ pointer-events: none;
 :host([disabled=true]) slot {
 color: var(--m-checkbox-disabled-color,${"#BABABA"}) !important;
 }
-:host([disabled=true][value=true]) .checkbox {
+:host([disabled=true][checked=true]) .checkbox {
 background-color: var(--m-checkbox-disabled-color,${"#BABABA"}) !important;
 }
 :host([disabled=true]) .checkbox {
 border: 2px solid var(--m-checkbox-disabled-color,${"#BABABA"}) !important;
 }`;
 const props = {
-    value: false,
+    checked: false,
     indeterminate: false,
     disabled: false
 };
@@ -96,7 +96,7 @@ export class Checkbox extends useElement({
     props,
     setup() {
         this.addEventListener("click", () => {
-            this.value = !this.value;
+            this.checked = !this.checked;
             this.dispatchEvent(new Event("change"));
         });
         return {};
@@ -104,7 +104,7 @@ export class Checkbox extends useElement({
     syncProps: [
         "disabled",
         "indeterminate",
-        "value"
+        "checked"
     ]
 }) {
 }

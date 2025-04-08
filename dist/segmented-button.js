@@ -1,5 +1,6 @@
 import { useElement } from "./core/element";
 import debounce from "./core/debounce";
+import { select } from "./core/select-elememt";
 const name = 'm-segmented-button';
 const style = `:host {
     width: -moz-fit-content;
@@ -75,18 +76,18 @@ export class SegmentedButton extends useElement({
             let totalWidth = this.getBoundingClientRect().width;
             const slider = this.shadowRoot?.querySelector(".selected-slider");
             const defaultTransition = getComputedStyle(slider).transition;
-            const selected = this.querySelector("m-segmented-button-item[selected='true']");
-            if (selected) {
+            const selected = select(this, "m-segmented-button-item", { selected: true });
+            if (selected[0]) {
                 const allItems = this.querySelectorAll("m-segmented-button-item");
                 for (let i = 0; i < allItems.length; i++) {
-                    if (allItems[i] === selected) {
+                    if (allItems[i] === selected[0]) {
                         this.index = i;
                         break;
                     }
                 }
-                const html = selected.innerHTML;
-                const value = selected.value || "";
-                const { width, left } = selected.getBoundingClientRect();
+                const html = selected[0].innerHTML;
+                const value = selected[0].value || "";
+                const { width, left } = selected[0].getBoundingClientRect();
                 const realLeft = left - totalLeft;
                 slider.style.left = `${realLeft}px`;
                 slider.style.width = `${width}px`;
@@ -107,7 +108,7 @@ export class SegmentedButton extends useElement({
                             continue;
                     }
                 }
-                if (!usedIndex)
+                if (usedIndex.toString() === 'NaN')
                     throw new Error("The default selection is misinitialized. Be sure to have at least one non-disabled element in the group list.");
                 const html = allItems[usedIndex].innerHTML;
                 const value = allItems[usedIndex].value || "";

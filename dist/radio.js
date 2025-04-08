@@ -1,4 +1,5 @@
 import { useElement } from "./core/element";
+import { select } from "./core/select-elememt";
 const name = 'm-radio';
 const template = `
 <div class="radio">
@@ -69,12 +70,13 @@ const props = {
     disabled: false
 };
 function eachChange() {
-    const _name = this.getAttribute("name");
+    const _name = this.name;
     if (_name) {
-        const allHasNameEle = document.querySelectorAll(`${name}[name="${_name}"]`);
+        const allHasNameEle = select(document.body, name, {
+            name: _name
+        });
         allHasNameEle.forEach(item => {
             item.checked = false;
-            item.value = this.getAttribute("value") ?? "";
             if (item != this)
                 item.dispatchEvent(new Event("change"));
         });
@@ -90,24 +92,25 @@ export class Radio extends useElement({
     syncProps: [
         "name",
         "checked",
-        "disabled"
+        "disabled",
+        "value"
     ],
     dispatch: {
         propChanged(key, value) {
             if (key !== "value")
                 return;
-            const _name = this.getAttribute("name");
-            const eachEles = document.querySelectorAll(`${name}[name="${_name}"]`);
+            const _name = this.name;
+            const eachEles = select(document.body, name, {
+                name: _name
+            });
             eachEles.forEach(item => {
                 item.checked = false;
             });
-            try {
-                document.querySelector(`${name}[name="${_name}"][value="${value}"]`).checked = true;
-                this.value = String(value);
-            }
-            catch {
-                throw new RangeError(`The value: "${value}" was not found in the group: "${_name}"`);
-            }
+            const newSelect = select(document.body, name, {
+                name: _name,
+                value: value
+            })[0];
+            newSelect.checked = true;
         }
     },
     setup() {

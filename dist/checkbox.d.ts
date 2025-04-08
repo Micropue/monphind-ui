@@ -1,6 +1,6 @@
 declare const name = "m-checkbox";
 type Props = {
-    value: boolean;
+    checked: boolean;
     indeterminate: boolean;
     disabled: boolean;
 };

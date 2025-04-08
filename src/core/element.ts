@@ -129,5 +129,5 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
             this[key] = newValue ?? ""
         }
     }
-    return InitElement as any
+    return InitElement as never
 }

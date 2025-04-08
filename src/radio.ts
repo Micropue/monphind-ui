@@ -1,6 +1,7 @@
 //分组：name
 import { useElement } from "./core/element"
 import Theme from "./core/default-theme"
+import { select } from "./core/select-elememt"
 const name = 'm-radio'
 
 const template = `
@@ -82,12 +83,13 @@ const props: Props = {
 
 
 function eachChange(this: HTMLElement & Props) {
-    const _name = this.getAttribute("name")
+    const _name = this.name
     if (_name) {
-        const allHasNameEle = document.querySelectorAll(`${name}[name="${_name}"]`)
+        const allHasNameEle = select<Props>(document.body, name, {
+            name: _name
+        })
         allHasNameEle.forEach(item => {
-            (item as Element & Props).checked = false;
-            (item as Element & Props).value = this.getAttribute("value") ?? ""
+            (item as Element & Props).checked = false
             if (item != this)
                 item.dispatchEvent(new Event("change"))
         })
@@ -103,22 +105,24 @@ export class Radio extends useElement<{}, Props>({
     syncProps: [
         "name",
         "checked",
-        "disabled"
+        "disabled",
+        "value"
     ],
     dispatch: {
         propChanged(this: HTMLElement & Props, key, value) {
             if (key !== "value") return
-            const _name = this.getAttribute("name")
-            const eachEles = document.querySelectorAll(`${name}[name="${_name}"]`)
+            const _name = this.name
+            const eachEles = select(document.body, name, {
+                name: _name
+            })
             eachEles.forEach(item => {
                 (item as typeof this).checked = false
             });
-            try {
-                (document.querySelector(`${name}[name="${_name}"][value="${value}"]`) as typeof this).checked = true
-                this.value = String(value)
-            } catch {
-                throw new RangeError(`The value: "${value}" was not found in the group: "${_name}"`)
-            }
+            const newSelect = select<Props>(document.body, name, {
+                name: _name,
+                value: value as string
+            })[0];
+            newSelect.checked = true
         }
     },
     setup() {

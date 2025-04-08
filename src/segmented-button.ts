@@ -1,6 +1,7 @@
 import { useElement } from "./core/element"
 import debounce from "./core/debounce"
 import Theme from "./core/default-theme"
+import { select } from "./core/select-elememt"
 const name = 'm-segmented-button'
 
 const style = `:host {
@@ -82,18 +83,18 @@ export class SegmentedButton extends useElement<{}, Props>({
             const slider = this.shadowRoot?.querySelector(".selected-slider") as HTMLElement
             const defaultTransition = getComputedStyle(slider).transition
             //如果子元素有selected=true的就选中此元素，没有就默认选中第一个。
-            const selected = this.querySelector("m-segmented-button-item[selected='true']") as HTMLElement & itemProps
-            if (selected) {
+            const selected = select<itemProps>(this, "m-segmented-button-item", { selected: true })
+            if (selected[0]) {
                 const allItems = this.querySelectorAll("m-segmented-button-item")
                 for (let i = 0; i < allItems.length; i++) {
-                    if (allItems[i] === selected) {
+                    if (allItems[i] === selected[0]) {
                         this.index = i
                         break
                     }
                 }
-                const html = selected.innerHTML
-                const value = selected.value || ""
-                const { width, left } = selected.getBoundingClientRect()
+                const html = selected[0].innerHTML
+                const value = selected[0].value || ""
+                const { width, left } = selected[0].getBoundingClientRect()
                 const realLeft = left - totalLeft
                 slider.style.left = `${realLeft}px`
                 slider.style.width = `${width}px`
@@ -111,7 +112,7 @@ export class SegmentedButton extends useElement<{}, Props>({
                         } else continue
                     }
                 }
-                if (!usedIndex) throw new Error("The default selection is misinitialized. Be sure to have at least one non-disabled element in the group list.")
+                if (usedIndex.toString() === 'NaN') throw new Error("The default selection is misinitialized. Be sure to have at least one non-disabled element in the group list.")
                 const html = allItems[usedIndex].innerHTML
                 const value = allItems[usedIndex].value || ""
                 const { width, left } = allItems[usedIndex].getBoundingClientRect()

@@ -50,26 +50,26 @@ bottom: 0;
 left: 0;
 right: 0;
 }
-:host([value=true]:not([indeterminate=true])) .checkbox {
+:host([checked=true]:not([indeterminate=true])) .checkbox {
 border: 2px solid var(--m-checkbox-checked-color,${Theme.checkbox_checked_color});
 background-color: var(--m-checkbox-checked-color,${Theme.checkbox_checked_color});
 }
-:host([value=true]:not([indeterminate=true])) .checked {
+:host([checked=true]:not([indeterminate=true])) .checked {
 transform: scale(1);
 opacity: 1;
 }
-:host([value=true]:not([indeterminate=true])) slot {
+:host([checked=true]:not([indeterminate=true])) slot {
 color: var(--m-checkbox-checked-color,${Theme.checkbox_checked_color});
 }
-:host([value=true][indeterminate=true]) .checkbox {
+:host([checked=true][indeterminate=true]) .checkbox {
 border: 2px solid var(--m-checkbox-checked-indeterminate-color,${Theme.checkbox_checked_indeterminate_color});
 background-color: var(--m-checkbox-checked-indeterminate-color,${Theme.checkbox_checked_indeterminate_color});
 }
-:host([value=true][indeterminate=true]) .indeterminate {
+:host([checked=true][indeterminate=true]) .indeterminate {
 transform: scale(1);
 opacity: 1;
 }
-:host([value=true][indeterminate=true]) slot {
+:host([checked=true][indeterminate=true]) slot {
 color: var(--m-checkbox-checked-indeterminate-color,${Theme.checkbox_checked_indeterminate_color});
 }
 :host([disabled=true]) {
@@ -79,19 +79,19 @@ pointer-events: none;
 :host([disabled=true]) slot {
 color: var(--m-checkbox-disabled-color,${Theme.checkbox_disabled_color}) !important;
 }
-:host([disabled=true][value=true]) .checkbox {
+:host([disabled=true][checked=true]) .checkbox {
 background-color: var(--m-checkbox-disabled-color,${Theme.checkbox_disabled_color}) !important;
 }
 :host([disabled=true]) .checkbox {
 border: 2px solid var(--m-checkbox-disabled-color,${Theme.checkbox_disabled_color}) !important;
 }`
 type Props = {
-    value: boolean,
+    checked: boolean,
     indeterminate: boolean,
     disabled: boolean
 }
 const props: Props = {
-    value: false,
+    checked: false,
     indeterminate: false,
     disabled: false
 }
@@ -102,7 +102,7 @@ export class Checkbox extends useElement<{}, Props>({
     props,
     setup(this: HTMLElement & Props) {
         this.addEventListener("click", () => {
-            this.value = !this.value
+            this.checked = !this.checked
             this.dispatchEvent(new Event("change"))
         })
         return {}
@@ -110,7 +110,7 @@ export class Checkbox extends useElement<{}, Props>({
     syncProps:[
         "disabled",
         "indeterminate",
-        "value"
+        "checked"
     ]
 }) { }
 Checkbox.defineElement()
