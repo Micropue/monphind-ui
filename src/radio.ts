@@ -84,7 +84,7 @@ const props: Props = {
 function eachChange(this: HTMLElement & Props) {
     const _name = this.getAttribute("name")
     if (_name) {
-        const allHasNameEle = document.querySelectorAll(`${name}[name=${_name}]`)
+        const allHasNameEle = document.querySelectorAll(`${name}[name="${_name}"]`)
         allHasNameEle.forEach(item => {
             (item as Element & Props).checked = false;
             (item as Element & Props).value = this.getAttribute("value") ?? ""
@@ -107,7 +107,7 @@ export class Radio extends useElement<{}, Props>({
     ],
     dispatch: {
         propChanged(this: HTMLElement & Props, key, value) {
-            if (key !== "value" || value === this.value) return
+            if (key !== "value") return
             const _name = this.getAttribute("name")
             const eachEles = document.querySelectorAll(`${name}[name="${_name}"]`)
             eachEles.forEach(item => {
