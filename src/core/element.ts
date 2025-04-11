@@ -113,7 +113,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                     }
                 })
             }
-            const exposes = config?.setup?.call<typeof this & P, any[], M | undefined>(this as any, [shadowRoot]) || ({} as M)
+            const exposes = config?.setup?.call<typeof this & P, any[], M | undefined>(this as any, shadowRoot) || ({} as M)
             for (const key in exposes) {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
                 Object.defineProperty(this, key, descriptor)

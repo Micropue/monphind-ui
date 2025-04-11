@@ -62,5 +62,7 @@ const enum Theme {
     segmented_button_item_hover_backgroundColor = "#F2F2F2",
     segmented_button_item_active_backgroundColor = "#e2e2e2",
     segmented_button_slider_hover_boxShadowColor = "#2ea1f9d6",
+    linear_progress_thumb_color = "#EFEFEF",
+    linear_progress_value_color = "#2EA2F9",
 }
 export default Theme

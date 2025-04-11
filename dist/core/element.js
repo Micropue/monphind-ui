@@ -78,7 +78,7 @@ export const useElement = (config) => {
                     }
                 });
             }
-            const exposes = config?.setup?.call(this, [shadowRoot]) || {};
+            const exposes = config?.setup?.call(this, shadowRoot) || {};
             for (const key in exposes) {
                 const descriptor = Object.getOwnPropertyDescriptor(exposes, key);
                 Object.defineProperty(this, key, descriptor);
