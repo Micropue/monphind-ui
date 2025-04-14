@@ -4,7 +4,7 @@ const template = `<slot>icon</slot>`;
 const style = `:host {
     padding: 8px;
     box-sizing: border-box;
-    border-radius: var(--m-icon-button-borderRadius,${"50%"});
+    border-radius: 50%;
     background-color: var(--m-icon-button-default-backgroundColor,${"white"});
     display: inline-flex;
     align-items: center;

@@ -8,13 +8,26 @@ const template =
 const style = `:host {
     padding: 8px 20px;
     box-sizing: border-box;
-    border-radius: var(--m-button-borderRadius,${Theme.button_borderRadius});
+    border-radius: 14px;
     background-color: var(--m-button-default-backgroundColor,${Theme.button_default_backgroundColor});
     display: inline-flex;
     align-items: center;
     justify-content:space-between;
-    font-size: var(--m-button-fontSize,${Theme.button_fontSize});
+    font-size: 0.85em;
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
+    color: var(--m-button-default-textColor,${Theme.button_default_textColor});
+}
+::slotted(m-icon[slot=start]),::slotted(m-circular-progress[slot=start]) , ::slotted(svg[slot=start]) {
+    color:currentColor;
+    fill:currentColor;
+    width: 30px;
+    height: 30px;
+}
+::slotted(m-icon[slot=end]) ,::slotted(m-circular-progress[slot=end]) , ::slotted(svg[slot=end]) {
+    color:currentColor;
+    fill:currentColor;
+    width: 30px;
+    height: 30px;
 }
 ::slotted([slot=start]){
     margin-right:10px;
@@ -42,6 +55,7 @@ const style = `:host {
     background-color: transparent;
     border: 1.5px solid var(--m-button-outlined-borderColor,${Theme.button_outlined_borderColor});
     transition: border 0.2s, background-color 0.2s;
+    color: var(--m-button-outlined-textColor,${Theme.button_outlined_textColor});
 }
 :host([type=outlined]:not([disabled=true]):hover) {
     box-shadow: none;
@@ -60,6 +74,7 @@ const style = `:host {
 :host([type=text]) {
     background-color: transparent;
     transition: background-color 0.2s, color 0.2s;
+    color: var(--m-button-text-textColor,${Theme.button_text_textColor});
 }
 :host([type=text]:not([disabled=true]):hover) {
     box-shadow: none;
@@ -89,7 +104,7 @@ export class Button extends useElement<{}, Props>({
     name,
     template,
     style,
-    syncProps:[
+    syncProps: [
         "disabled",
         "type",
         "value"

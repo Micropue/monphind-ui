@@ -102,7 +102,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                                 _value = String(value)
                                 break
                         }
-                        if (this.#props[key] != value){
+                        if (this.#props[key] != value) {
                             this.#props[key] = _value as any
                             config?.dispatch?.propChanged?.call?.<typeof this & P, any, void>(this as typeof this & P, key, value)
                         }
@@ -115,8 +115,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
             }
             const exposes = config?.setup?.call<typeof this & P, any[], M | undefined>(this as any, shadowRoot) || ({} as M)
             for (const key in exposes) {
-                const descriptor = Object.getOwnPropertyDescriptor(exposes, key) as PropertyDescriptor
-                Object.defineProperty(this, key, descriptor)
+                Object.defineProperty(this, key, { get: () => exposes[key] })
             }
         }
         connectedCallback() {

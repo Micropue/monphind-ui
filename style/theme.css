@@ -3,15 +3,15 @@
 :root {
   --m-theme-color: #2EA2F9;
   --m-translucency-theme-color: #2ea1f9d6;
-  --m-button-borderRadius: 14px;
+  --m-button-default-textColor: black;
   --m-button-default-backgroundColor: white;
-  --m-button-fontSize: 0.85em;
   --m-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
   --m-button-default-active-boxShadowColor: var(--m-translucency-theme-color);
   --m-button-default-active-backgroundColor: var(--m-theme-color);
   --m-button-default-active-textColor: white;
   --m-button-default-disabled-backgroundColor: #EFEFEF;
   --m-button-default-disabled-textColor: #BABABA;
+  --m-button-outlined-textColor: black;
   --m-button-outlined-borderColor: black;
   --m-button-outlined-hover-backgroundColor: black;
   --m-button-outlined-hover-textColor: white;
@@ -19,9 +19,9 @@
   --m-button-outlined-active-borderColor: #555555;
   --m-button-outlined-disabled-borderColor: #EFEFEF;
   --m-button-outlined-disabled-textColor: #BABABA;
+  --m-button-text-textColor: black;
   --m-button-text-hover-backgroundColor: #EFEFEF;
-  --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
-  --m-icon-button-borderRadius: 50%;
+  --m-button-text-active-backgroundColor: #EFEFEF;
   --m-icon-button-default-backgroundColor: white;
   --m-icon-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
   --m-icon-button-default-active-boxShadowColor: var(--m-translucency-theme-color);
@@ -58,13 +58,13 @@
   --m-slider-slider-backgroundColor: var(--m-theme-color);
   --m-slider-hiddenlabel-color: gray;
   --m-slider-label-color: rgb(255, 255, 255);
-  --m-segmented-button-backgroundColor:white;
-  --m-segmented-button-slider-backgroundColor:var(--m-theme-color);
-  --m-segmented-button-slider-hover-boxShadowColor:var(--m-translucency-theme-color);
-  --m-segmented-button-item-hover-backgroundColor:#F2F2F2;
-  --m-segmented-button-item-active-backgroundColor:#e2e2e2;
-  --m-linear-progress-thumb-color:#EFEFEF;
-  --m-linear-progress-value-color:var(--m-theme-color);
+  --m-segmented-button-backgroundColor: white;
+  --m-segmented-button-slider-backgroundColor: var(--m-theme-color);
+  --m-segmented-button-slider-hover-boxShadowColor: var(--m-translucency-theme-color);
+  --m-segmented-button-item-hover-backgroundColor: #F2F2F2;
+  --m-segmented-button-item-active-backgroundColor: #e2e2e2;
+  --m-linear-progress-thumb-color: #EFEFEF;
+  --m-linear-progress-value-color: var(--m-theme-color);
 }
 
 body {
