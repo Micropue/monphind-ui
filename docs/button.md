@@ -62,9 +62,7 @@ css变量
 
 | 名称                                        | 默认值                       |
 | ------------------------------------------- | ---------------------------- |
-| --m-button-borderRadius                     | 14px                         |
 | --m-button-default-backgroundColor          | white                        |
-| --m-button-fontSize                         | 0.85em                       |
 | --m-button-default-hover-boxShadowColor     | rgba(70, 70, 70, 0.237)      |
 | --m-button-default-active-boxShadowColor    | --m-translucency-theme-color |
 | --m-button-default-active-backgroundColor   | --m-theme-color              |
