@@ -65,6 +65,7 @@
   --m-segmented-button-item-active-backgroundColor: #e2e2e2;
   --m-linear-progress-thumb-color: #EFEFEF;
   --m-linear-progress-value-color: var(--m-theme-color);
+  --m-circular-progress-fillColor: var(--m-theme-color);
 }
 
 body {

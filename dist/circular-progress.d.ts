@@ -1,11 +1,15 @@
 declare const name = "m-circular-progress";
 declare const props: {
     unknown: boolean;
+    value: number;
+    max: number;
 };
 type Props = typeof props;
 declare const CircularProgress_base: {
     new (): {
         unknown: boolean;
+        value: number;
+        max: number;
     } & HTMLElement;
     readonly defineElement: () => void;
     prototype: HTMLElement;
