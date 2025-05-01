@@ -20,7 +20,7 @@
     --m-button-outlined-disabled-textColor: #BABABA;
     --m-button-text-textColor: black;
     --m-button-text-hover-backgroundColor: #EFEFEF;
-    --m-button-text-active-backgroundColor: #EFEFEF;
+    --m-button-text-active-backgroundColor: var(--m-theme-color);
     --m-icon-button-default-backgroundColor: white;
     --m-icon-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
     --m-icon-button-default-active-boxShadowColor: var(--m-translucency-theme-color);

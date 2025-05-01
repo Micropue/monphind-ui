@@ -10,13 +10,33 @@ display: inline-flex;
 align-items: center;
 background-color: var(--m-fab-backgroundColor,${Theme.fab_backgroundColor});
 border-radius: 15px;
-padding: 5px;
+padding:10px;
+box-sizing:border-box;
 font-size: 14px;
 transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+justify-content:center;
+min-width:60px;
+min-height:60px;
 }
-slot{
-margin: 10px;
-display: flex;
+::slotted(m-circular-progress),::slotted(m-icon),::slotted(m-icon[slot=start]),::slotted(m-circular-progress[slot=start]) , ::slotted(svg[slot=start]) {
+    color:currentColor;
+    fill:currentColor;
+    width: 35px;
+    height: 35px;
+    display:initial;
+}
+::slotted(m-icon[slot=end]) ,::slotted(m-circular-progress[slot=end]) , ::slotted(svg[slot=end]) {
+    color:currentColor;
+    fill:currentColor;
+    width: 35px;
+    height: 35px;
+    display:initial;
+}
+::slotted([slot=start]){
+margin-right:10px;
+}
+::slotted([slot=end]){
+margin-right:10px;
 }
 :host(:not([disabled=true]):hover) {
 transform: translateY(-3px);

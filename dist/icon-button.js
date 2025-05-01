@@ -11,6 +11,14 @@ const style = `:host {
     justify-content:space-between;
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
 }
+::slotted(m-icon),::slotted(m-circular-progress) , ::slotted(svg) {
+    color:currentColor;
+    fill:currentColor;
+    width: 30px;
+    height: 30px;
+    display:initial;
+}
+
 :host(:not([disabled=true]):hover) {
     transform: translateY(-2px);
     cursor: pointer;

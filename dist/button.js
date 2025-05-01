@@ -4,13 +4,15 @@ const template = `<slot name="start"></slot>
         <slot></slot>
 <slot name="end"></slot>`;
 const style = `:host {
-    padding: 8px 20px;
+    min-width:85px;
+    height:40px;
     box-sizing: border-box;
+    padding:10px;
     border-radius: 14px;
     background-color: var(--m-button-default-backgroundColor,${"white"});
     display: inline-flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content:center;
     font-size: 0.85em;
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
     color: var(--m-button-default-textColor,${"black"});
@@ -20,12 +22,14 @@ const style = `:host {
     fill:currentColor;
     width: 30px;
     height: 30px;
+    display:initial;
 }
 ::slotted(m-icon[slot=end]) ,::slotted(m-circular-progress[slot=end]) , ::slotted(svg[slot=end]) {
     color:currentColor;
     fill:currentColor;
     width: 30px;
     height: 30px;
+    display:initial;
 }
 ::slotted([slot=start]){
     margin-right:10px;

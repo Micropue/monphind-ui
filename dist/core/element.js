@@ -17,9 +17,8 @@ const setStyle = (shadowRoot, style) => {
         shadowRoot.adoptedStyleSheets.push(sheet);
     }
     catch {
-        initBaseStyle(shadowRoot);
         const styleEle = document.createElement("style");
-        styleEle.textContent = style ?? "";
+        styleEle.textContent = (baseStyle + '\n' + style);
         shadowRoot.insertBefore(styleEle, shadowRoot.firstChild);
     }
 };

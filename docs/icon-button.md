@@ -20,6 +20,14 @@
 <m-icon-button disabled="true"></m-icon-button>
 ```
 
+使用圆形进度（`m-circular-progress`）
+
+```html
+<m-icon-button>
+	<m-circulat-progress unknown="true"></m-circulat-progress>
+</m-icon-button>
+```
+
 属性
 
 | 名称     | 介绍     | 类型                  | 同步更新DOM | 默认值 |
