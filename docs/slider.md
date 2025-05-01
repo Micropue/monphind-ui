@@ -18,6 +18,15 @@
 <m-slider labeled="true"></m-slider>
 ```
 
+> [!Warning]
+>
+> 由于`value`属性的优先渲染，`value`属性应在所有配置属性（`min` `max` `step`）之后。
+>
+> ```html
+> <m-slider value="50" min="0" max="1000"></m-slider>
+> <!-- 错误！会导致value属性优先被渲染到组件上，组件库再处理min、max等其余配置属性。  ->
+> ```
+
 监听滑块
 
 ```js
