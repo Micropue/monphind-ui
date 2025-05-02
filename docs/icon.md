@@ -28,6 +28,8 @@
 <m-icon name="password"></m-icon>
 <m-icon name="mail"></m-icon>
 <m-icon name="github"></m-icon>
+<m-icon name="sun"></m-icon>
+<m-icon name="moon"></m-icon>
 ```
 
 自定义颜色
@@ -36,13 +38,13 @@
 <m-icon style="color:red" name="mail"></m-icon>
 ```
 
-插槽
+## 插槽
 
 | 名称     | 介绍            |
 | -------- | --------------- |
 | 默认插槽 | 插入svg图标标签 |
 
-属性
+## 属性
 
 | 名称 | 默认值 | 是否同步 | 介绍         | 类型                  |
 | ---- | ------ | -------- | ------------ | --------------------- |

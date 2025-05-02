@@ -63,6 +63,13 @@ declare const enum Theme {
     segmented_button_item_active_backgroundColor = "#e2e2e2",
     linear_progress_thumb_color = "#EFEFEF",
     linear_progress_value_color = "#2EA2F9",
-    circular_progress_fillColor = "#2EA2F9"
+    circular_progress_fillColor = "#2EA2F9",
+    switch_trigger_backgroundColor = "white",
+    switch_checked_backgroundColor = "#2EA2F9",
+    switch_checked_foreColor = "#2EA2F9",
+    switch_backgroundColor = "#EFEFEF",
+    switch_disabled_backgroundColor = "#EBEBEB",
+    switch_disabled_trigger_foreColor = "white",
+    switch_disabled_trigger_backgroundColor = "#BABABA"
 }
 export default Theme;

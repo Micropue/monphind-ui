@@ -13,7 +13,7 @@ interface Config<M, P extends {
         connected?(this: CommonThis<P>): void;
         disconnected?(this: CommonThis<P>): void;
     };
-    setup?(this: HTMLElement & P, shadowRoot?: ShadowRoot): M | undefined;
+    setup?(this: HTMLElement & P, shadowRoot: ShadowRoot): M | undefined;
 }
 export declare const useElement: <M, P extends {
     [name: string]: Prop;

@@ -8,3 +8,4 @@ export * from './slider';
 export * from './segmented-button';
 export * from './linear-progress';
 export * from './circular-progress';
+export * from './switch';

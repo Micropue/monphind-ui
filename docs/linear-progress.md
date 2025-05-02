@@ -19,7 +19,7 @@ const progress = document.querySelector("m-linear-progress")
 progress.value = 10
 ```
 
-属性
+## 属性
 
 | 名称    | 介绍                | 类型    | 默认值 | 同步 |
 | ------- | ------------------- | ------- | ------ | ---- |
@@ -27,11 +27,11 @@ progress.value = 10
 | value   | 进度值，区0-max之间 | number  | 0      | 是   |
 | max     | 最大值              | number  | 100    | 否   |
 
-无插槽
+## 无插槽
 
-无事件
+## 无事件
 
-css变量
+## css变量
 
 | 名称                            | 默认值          |
 | ------------------------------- | --------------- |

@@ -18,19 +18,20 @@ const style = `:host {
     font-size: 0.85em;
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
     color: var(--m-button-default-textColor,${Theme.button_default_textColor});
+    vertical-align:middle;
 }
 ::slotted(m-icon[slot=start]),::slotted(m-circular-progress[slot=start]) , ::slotted(svg[slot=start]) {
     color:currentColor;
     fill:currentColor;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display:initial;
 }
 ::slotted(m-icon[slot=end]) ,::slotted(m-circular-progress[slot=end]) , ::slotted(svg[slot=end]) {
     color:currentColor;
     fill:currentColor;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display:initial;
 }
 ::slotted([slot=start]){

@@ -66,6 +66,13 @@
   --m-linear-progress-thumb-color: #EFEFEF;
   --m-linear-progress-value-color: var(--m-theme-color);
   --m-circular-progress-fillColor: var(--m-theme-color);
+  --m-switch-trigger-backgroundColor: white;
+  --m-switch-checked-backgroundColor: var(--m-theme-color);
+  --m-switch-checked-foreColor: var(--m-theme-color);
+  --m-switch-backgroundColor: #EFEFEF;
+  --m-switch-disabled-backgroundColor: #EBEBEB;
+  --m-switch-disabled-trigger-foreColor: white;
+  --m-switch-disabled-trigger-backgroundColor: #BABABA;
 }
 
 body {

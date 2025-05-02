@@ -23,6 +23,8 @@ declare const builtInIcons: {
     password: string;
     mail: string;
     github: string;
+    sun: string;
+    moon: string;
 };
 interface Props {
     [name: string]: string;

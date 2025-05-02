@@ -8,14 +8,15 @@ const style = `:host {
     background-color: var(--m-icon-button-default-backgroundColor,${"white"});
     display: inline-flex;
     align-items: center;
+    vertical-align:middle;
     justify-content:space-between;
     transition: transform 0.2s, box-shadow 0.4s, background-color 0.3s, color 0.3s;
 }
 ::slotted(m-icon),::slotted(m-circular-progress) , ::slotted(svg) {
     color:currentColor;
     fill:currentColor;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     display:initial;
 }
 

@@ -35,7 +35,7 @@ progress.value = 20
 <m-circular-progress style="color: red"></m-circular-progress>
 ```
 
-属性
+## 属性
 
 | 名称    | 介绍             | 类型    | 默认值 | 同步 |
 | ------- | ---------------- | ------- | ------ | ---- |
@@ -43,7 +43,7 @@ progress.value = 20
 | max     | 最大值           | number  | 100    | 否   |
 | unknown | 是否启用未知进度 | boolean | false  | 是   |
 
-css变量
+## css变量
 
 | 名称                            | 默认值          |
 | ------------------------------- | --------------- |
