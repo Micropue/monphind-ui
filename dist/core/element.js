@@ -3,6 +3,7 @@ const baseStyle = `:host{
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }`;
 const initBaseStyle = function (shadowRoot) {
     const sheet = new CSSStyleSheet();

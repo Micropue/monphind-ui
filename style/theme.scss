@@ -2,6 +2,8 @@
 :root {
     --m-theme-color: #2EA2F9;
     --m-translucency-theme-color: #2ea1f9d6;
+    --m-selection-backgroundColor: var(--m-translucency-theme-color);
+    --m-selection-textColor: white;
     --m-button-default-textColor: black;
     --m-button-default-backgroundColor: white;
     --m-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
@@ -72,6 +74,19 @@
     --m-switch-disabled-backgroundColor: #EBEBEB;
     --m-switch-disabled-trigger-foreColor: white;
     --m-switch-disabled-trigger-backgroundColor: #BABABA;
+    --m-input-backgroundColor: white;
+    --m-input-selection-backgroundColor: var(--m-selection-backgroundColor);
+    --m-input-selection-textColor: var(--m-selection-textColor);
+    --m-input-default-label-color: rgb(178, 178, 178);
+    --m-input-focused-label-color: var(--m-theme-color);
+    --m-input-focused-icon-color: var(--m-theme-color);
+    --m-input-focused-outline-color: var(--m-translucency-theme-color);
+    --m-input-disabled-label-color: rgb(178, 178, 178);
+    --m-input-disabled-backgroundColor: #EFEFEF;
+    --m-input-disabled-color: rgb(178, 178, 178);
+    --m-input-readonly-color: rgb(178, 178, 178);
+    --m-input-error-outline-color:rgba(255, 0, 0, 0.507);
+    --m-input-error-label-color:rgba(255, 0, 0, 0.507);
 }
 
 body {
@@ -84,4 +99,9 @@ body {
 
 :not(:defined) {
     display: none;
+}
+
+::selection {
+    background-color: var(--m-selection-backgroundColor);
+    color: var(--m-selection-textColor);
 }

@@ -95,7 +95,7 @@ const props = {
 
 type Props = typeof props
 
-export class Switch extends useElement<{}, Props>({
+export class Switch extends useElement({
     name,
     style,
     template,

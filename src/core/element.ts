@@ -17,13 +17,14 @@ interface Config<M, P extends {
         connected?(this: CommonThis<P>): void
         disconnected?(this: CommonThis<P>): void
     };
-    setup?(this: HTMLElement & P, shadowRoot: ShadowRoot): M | undefined;
+    setup?(this: HTMLElement & P, shadowRoot: ShadowRoot): M;
 }
 const baseStyle = `:host{
     -moz-user-select: none;
     user-select: none;
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }`
 
 const initBaseStyle = function (shadowRoot: ShadowRoot): void {
@@ -44,20 +45,12 @@ const setStyle = (shadowRoot: ShadowRoot, style?: string): void => {
     }
 }
 export const useElement = <M, P extends { [name: string]: Prop }>(config: Config<M, P>): {
-    new(): P & M & HTMLElement
+    new(): P & HTMLElement & M
     readonly defineElement: () => void
     prototype: HTMLElement
 } => {
     class InitElement extends HTMLElement {
         [key: string]: any
-        /**
-         * 定义元素 ✓
-         * 模板插入shadowRoot ✓
-         * 构建样式 ✓
-         * 动态更新属性：「所有的html属性都要允许元素调用」 ✓
-         * 内部实现 ✓
-         * 内部方法「所有的内部方法都要允许元素直接调用」✓
-         */
         static observedAttributes = Object.keys(config.props || {})
         static defineElement() {
             customElements.define(config.name, this)
@@ -112,7 +105,7 @@ export const useElement = <M, P extends { [name: string]: Prop }>(config: Config
                     }
                 })
             }
-            const exposes = config?.setup?.call<typeof this & P, any[], M | undefined>(this as any, shadowRoot) || ({} as M)
+            const exposes = config?.setup?.call<typeof this & P, any, M | void>(this as any, shadowRoot) || ({} as M)
             for (const key in exposes) {
                 Object.defineProperty(this, key, { get: () => exposes[key] })
             }

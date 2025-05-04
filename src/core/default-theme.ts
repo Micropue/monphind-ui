@@ -71,6 +71,20 @@ const enum Theme {
     switch_disabled_backgroundColor = "#EBEBEB",
     switch_disabled_trigger_foreColor = "white",
     switch_disabled_trigger_backgroundColor = "#BABABA",
+    input_backgroundColor = "white",
+    input_selection_backgroundColor = "var(selection_backgroundColor)",
+    input_selection_textColor = "var(selection_textColor)",
+    input_default_label_color = "rgb(178,178,178)",
+    input_focused_label_color = "#2EA2F9",
+    input_focused_icon_color = "#2EA2F9",
+    input_focused_outline_color = "#2ea1f9d6",
+    input_disabled_label_color = "rgb(178,178,178)",
+    input_disabled_backgroundColor = "#EFEFEF",
+    input_disabled_color = "rgb(178,178,178)",
+    input_readonly_color = "rgb(178,178,178)",
+    input_error_outline_color = "rgba(255,0,0,0.507)",
+    input_error_label_color = "rgba(255,0,0,0.507)",
+
 }
 
 export default Theme

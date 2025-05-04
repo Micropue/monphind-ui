@@ -40,17 +40,17 @@ const style = `:host {
   height: 17.92px;
   transition: all 0.3s;
 }
-:host .trigger-block ::slotted(m-icon[name=status-default]),
-:host .trigger-block ::slotted(m-circular-progress[name=status-default]),
-:host .trigger-block ::slotted(svg[name=status-default]) {
+:host .trigger-block ::slotted(m-icon[slot=status-default]),
+:host .trigger-block ::slotted(m-circular-progress[slot=status-default]),
+:host .trigger-block ::slotted(svg[slot=status-default]) {
   color: currentColor;
   width: 17.92px;
   height: 17.92px;
   transition: all 0.3s;
 }
-:host .trigger-block ::slotted(m-icon[name=status-checked]),
-:host .trigger-block ::slotted(m-circular-progress[name=status-checked]),
-:host .trigger-block ::slotted(svg[name=status-checked]) {
+:host .trigger-block ::slotted(m-icon[slot=status-checked]),
+:host .trigger-block ::slotted(m-circular-progress[slot=status-checked]),
+:host .trigger-block ::slotted(svg[slot=status-checked]) {
   color: currentColor;
   width: 17.92px;
   height: 17.92px;
