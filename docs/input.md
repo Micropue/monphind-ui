@@ -17,6 +17,17 @@
 >
 > 在不设置`type`属性时，默认为`text`类型
 
+插入图标
+
+```html
+<m-input label="输入用户名">
+	<m-icon name="user" slot="icon"></m-icon><!--前图标-->
+  <m-icon-button type="text">
+  	<m-icon name="close"></m-icon>
+  </m-icon-button> <!--触发按钮-->
+</m-input>
+```
+
 禁用输入框
 
 ```html
@@ -120,7 +131,10 @@ export default defineConfig({
 
 ## 插槽
 
-无插槽
+| 名称   | 介绍                         |
+| ------ | ---------------------------- |
+| icon   | 文本框前插槽                 |
+| action | 文本框后部触发按钮或图标插槽 |
 
 ## CSS变量
 
