@@ -1,7 +1,7 @@
 declare const name = "m-icon-button";
 type Props = {
     disabled: boolean;
-    type: "" | "outlined" | "text";
+    type: "" | "outlined" | "text" | "filled";
 };
 declare const IconButton_base: {
     new (): Props & HTMLElement;

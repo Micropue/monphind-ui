@@ -13,17 +13,19 @@
   --m-button-default-active-textColor: white;
   --m-button-default-disabled-backgroundColor: #EFEFEF;
   --m-button-default-disabled-textColor: #BABABA;
-  --m-button-outlined-textColor: black;
-  --m-button-outlined-borderColor: black;
-  --m-button-outlined-hover-backgroundColor: black;
+  --m-button-outlined-textColor: var(--m-theme-color);
+  --m-button-outlined-borderColor: var(--m-theme-color);
+  --m-button-outlined-hover-backgroundColor: var(--m-theme-color);
   --m-button-outlined-hover-textColor: white;
-  --m-button-outlined-active-backgroundColor: #555555;
-  --m-button-outlined-active-borderColor: #555555;
   --m-button-outlined-disabled-borderColor: #EFEFEF;
   --m-button-outlined-disabled-textColor: #BABABA;
   --m-button-text-textColor: black;
   --m-button-text-hover-backgroundColor: #EFEFEF;
   --m-button-text-active-backgroundColor: var(--m-theme-color);
+  --m-button-filled-backgroundColor: var(--m-theme-color);
+  --m-button-filled-textColor: white;
+  --m-button-filled-disabled-backgroundColor: #EFEFEF;
+  --m-button-filled-disabled-textColor: #BABABA;
   --m-icon-button-default-backgroundColor: white;
   --m-icon-button-default-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
   --m-icon-button-default-active-boxShadowColor: var(--m-translucency-theme-color);
@@ -31,15 +33,18 @@
   --m-icon-button-default-active-textColor: white;
   --m-icon-button-default-disabled-backgroundColor: #EFEFEF;
   --m-icon-button-default-disabled-textColor: #BABABA;
-  --m-icon-button-outlined-borderColor: black;
-  --m-icon-button-outlined-hover-backgroundColor: black;
+  --m-icon-button-outlined-borderColor: var(--m-theme-color);
+  --m-icon-button-outlined-hover-backgroundColor: var(--m-theme-color);
   --m-icon-button-outlined-hover-textColor: white;
-  --m-icon-button-outlined-active-backgroundColor: #555555;
-  --m-icon-button-outlined-active-borderColor: #555555;
   --m-icon-button-outlined-disabled-borderColor: #EFEFEF;
   --m-icon-button-outlined-disabled-textColor: #BABABA;
+  --m-icon-button-outlined-color:var(--m-theme-color);
   --m-icon-button-text-hover-backgroundColor: #EFEFEF;
   --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
+  --m-icon-button-filled-backgroundColor: var(--m-theme-color);
+  --m-icon-button-filled-textColor: white;
+  --m-icon-button-filled-disabled-backgroundColor: #EFEFEF;
+  --m-icon-button-filled-disabled-textColor: #BABABA;
   --m-fab-backgroundColor: white;
   --m-fab-hover-boxShadowColor: rgba(70, 70, 70, 0.237);
   --m-fab-hover-backgroundColor: rgb(247, 247, 247);
@@ -86,8 +91,8 @@
   --m-input-disabled-backgroundColor: #EFEFEF;
   --m-input-disabled-color: rgb(178, 178, 178);
   --m-input-readonly-color: rgb(178, 178, 178);
-  --m-input-error-outline-color:rgba(255, 0, 0, 0.507);
-  --m-input-error-label-color:rgba(255, 0, 0, 0.507);
+  --m-input-error-outline-color: rgba(255, 0, 0, 0.507);
+  --m-input-error-label-color: rgba(255, 0, 0, 0.507);
 }
 
 body {

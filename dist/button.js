@@ -56,19 +56,18 @@ const style = `:host {
 }
 :host([type=outlined]) {
     background-color: transparent;
-    border: 1.5px solid var(--m-button-outlined-borderColor,${"black"});
-    transition: border 0.2s, background-color 0.2s;
-    color: var(--m-button-outlined-textColor,${"black"});
+    border: 1.5px solid var(--m-button-outlined-borderColor,${"#2EA2F9"});
+    transition: border 0.2s, background-color 0.2s, filter 0.2s;
+    color: var(--m-button-outlined-textColor,${"#2EA2F9"});
 }
 :host([type=outlined]:not([disabled=true]):hover) {
     box-shadow: none;
-    background-color: var(--m-button-outlined-hover-backgroundColor,${"black"});
+    background-color: var(--m-button-outlined-hover-backgroundColor,${"#2EA2F9"});
     color: var(--m-button-outlined-hover-textColor,${"white"});
     transform: none;
 }
 :host([type=outlined]:not([disabled=true]):active) {
-    background-color: var(--m-button-outlined-active-backgroundColor,${"#555555"});
-    border: 1.5px solid var(--m-button-outlined-active-borderColor,${"#555555"});
+    filter:brightness(90%);
 }
 :host([type=outlined][disabled=true]) {
     border: 1.5px solid var(--m-button-outlined-disabled-borderColor,${"#EFEFEF"});
@@ -89,6 +88,23 @@ const style = `:host {
 }
 :host([type=text][disabled=true]) {
     color: var(--m-button-outlined-disabled-textColor,${"#BABABA"});
+}
+:host([type=filled]){
+    background-color:var(--m-button-filled-backgroundColor,${"#2EA2F9"});
+    color:var(--m-button-filled-textColor,${"white"});
+    transition:all 0.2s;
+}
+:host([type=filled]:hover){
+    transform:none;
+    box-shadow:none;
+    filter:brightness(95%);
+}
+:host([type=filled][disabled=true]){
+    background-color:var(--m-button-filled-disabled-backgroundColor,${"#EFEFEF"});
+    color:var(--m-button-filled-disabled-textColor,${"#BABABA"});
+}
+:host([type=filled]:active){
+    filter:brightness(90%);
 }
 :host([disabled=true]){
     pointer-events:none;

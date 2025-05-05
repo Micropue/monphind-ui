@@ -1,6 +1,6 @@
 declare const name = "m-button";
 type Props = {
-    type: "" | "outlined" | "text";
+    type: "" | "outlined" | "text" | "filled";
     disabled: boolean;
     value: string;
 };
