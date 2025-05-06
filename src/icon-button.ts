@@ -41,7 +41,7 @@ const style = `:host {
     background-color: transparent;
     border: 1.5px solid var(--m-icon-button-outlined-borderColor,${Theme.icon_button_outlined_borderColor});
     transition: border 0.2s, background-color 0.2s;
-    color:var(--m-icon-button-outlined-color);
+    color:var(--m-icon-button-outlined-color,${Theme.icon_button_outlined_color});
 }
 :host([type=outlined]:not([disabled=true]):hover) {
     box-shadow: none;

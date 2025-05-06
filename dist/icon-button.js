@@ -40,7 +40,7 @@ const style = `:host {
     background-color: transparent;
     border: 1.5px solid var(--m-icon-button-outlined-borderColor,${"#2EA2F9"});
     transition: border 0.2s, background-color 0.2s;
-    color:var(--m-icon-button-outlined-color);
+    color:var(--m-icon-button-outlined-color,${"#2EA2F9"});
 }
 :host([type=outlined]:not([disabled=true]):hover) {
     box-shadow: none;

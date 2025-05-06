@@ -36,7 +36,7 @@ const enum Theme {
     icon_button_outlined_hover_textColor = "white",
     icon_button_outlined_disabled_borderColor = "#EFEFEF",
     icon_button_outlined_disabled_textColor = "#BABABA",
-    icon_button_outlined_color = "white",
+    icon_button_outlined_color = "#2EA2F9",
     icon_button_text_hover_backgroundColor = "#EFEFEF",
     icon_button_text_active_backgroundColor = "#2EA2F9",
     icon_button_filled_backgroundColor = "#2EA2F9",
@@ -91,7 +91,6 @@ const enum Theme {
     input_readonly_color = "rgb(178,178,178)",
     input_error_outline_color = "rgba(255,0,0,0.507)",
     input_error_label_color = "rgba(255,0,0,0.507)",
-
 }
 
 export default Theme
