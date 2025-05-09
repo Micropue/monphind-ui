@@ -38,7 +38,7 @@
   --m-icon-button-outlined-hover-textColor: white;
   --m-icon-button-outlined-disabled-borderColor: #EFEFEF;
   --m-icon-button-outlined-disabled-textColor: #BABABA;
-  --m-icon-button-outlined-color:var(--m-theme-color);
+  --m-icon-button-outlined-color: var(--m-theme-color);
   --m-icon-button-text-hover-backgroundColor: #EFEFEF;
   --m-icon-button-text-active-backgroundColor: var(--m-theme-color);
   --m-icon-button-filled-backgroundColor: var(--m-theme-color);
@@ -93,6 +93,14 @@
   --m-input-readonly-color: rgb(178, 178, 178);
   --m-input-error-outline-color: rgba(255, 0, 0, 0.507);
   --m-input-error-label-color: rgba(255, 0, 0, 0.507);
+  --m-textarea-default-label-color: rgb(178, 178, 178);
+  --m-textarea-focused-label-color: var(--m-theme-color);
+  --m-textarea-focused-outline-color:var(--m-translucency-theme-color);
+  --m-textarea-disabled-backgroundColor:#EFEFEF;
+  --m-textarea-disabled-label-color:rgb(178,178,178);
+  --m-textarea-readonly-color:rgb(178, 178, 178);
+  --m-textarea-error-outline-color: rgba(255, 0, 0, 0.507);
+  --m-textarea-error-label-color: rgba(255, 0, 0, 0.507);
 }
 
 body {

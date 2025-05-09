@@ -68,10 +68,8 @@ export class SegmentedButton extends useElement({
                 slider.style.width = `${width}px`;
                 slider.innerHTML = allItems[this.index].innerHTML;
             }
-        }
-    },
-    setup() {
-        setTimeout(() => {
+        },
+        connected() {
             let totalLeft = this.offsetLeft;
             let totalWidth = this.getBoundingClientRect().width;
             const slider = this.shadowRoot?.querySelector(".selected-slider");
@@ -156,7 +154,9 @@ export class SegmentedButton extends useElement({
             });
             robserver.observe(this);
             slider.style.display = 'initial';
-        });
+        }
+    },
+    setup() {
         return {};
     }
 }) {

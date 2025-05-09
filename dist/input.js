@@ -79,6 +79,7 @@ const style = `:host {
   position: relative;
   width: 100%;
   height: 100%;
+
 }
 :host .container .input input {
   width: 100%;
@@ -89,6 +90,7 @@ const style = `:host {
   box-sizing: border-box;
   font-size: 14px;
   background-color: transparent;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 :host .container .input input::-moz-selection {
   background-color: var(--m-input-selection-backgroundColor,${"var(selection_backgroundColor)"});
@@ -187,13 +189,11 @@ export class Input extends useElement({
                     label.textContent = String(value);
                 }
             }
-        }
-    },
-    setup(shadowRoot) {
-        const input = shadowRoot.querySelector("input");
-        const inputOuter = shadowRoot.querySelector(".input");
-        const label = shadowRoot.querySelector('.label');
-        setTimeout(() => {
+        },
+        connected() {
+            const input = this.shadowRoot?.querySelector("input");
+            const inputOuter = this.shadowRoot?.querySelector(".input");
+            const label = this.shadowRoot?.querySelector('.label');
             label.textContent = this.label;
             checkType(this.type, input);
             inputOuter.setAttribute("has_text", input.value ? "true" : "false");
@@ -209,7 +209,11 @@ export class Input extends useElement({
             input.min = this.min.toString();
             input.max = this.max.toString();
             this.count = input.value.length;
-        });
+        }
+    },
+    setup(shadowRoot) {
+        const input = shadowRoot.querySelector("input");
+        const inputOuter = shadowRoot.querySelector(".input");
         if (this.querySelector("[slot=icon]")) {
             inputOuter.setAttribute("has_icon", "true");
         }

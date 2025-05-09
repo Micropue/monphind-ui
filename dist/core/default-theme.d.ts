@@ -90,6 +90,14 @@ declare const enum Theme {
     input_disabled_color = "rgb(178,178,178)",
     input_readonly_color = "rgb(178,178,178)",
     input_error_outline_color = "rgba(255,0,0,0.507)",
-    input_error_label_color = "rgba(255,0,0,0.507)"
+    input_error_label_color = "rgba(255,0,0,0.507)",
+    textarea_default_label_color = "rgb(178,178,178)",
+    textarea_focused_label_color = "#2EA2F9",
+    textarea_focused_outline_color = "#2ea1f9d6",
+    textarea_disabled_backgroundColor = "#EFEFEF",
+    textarea_disabled_label_color = "rgb(178,178,178)",
+    textarea_readonly_color = "rgb(178,178,178)",
+    textarea_error_outline_color = "rgba(255,0,0,0.507)",
+    textarea_error_label_color = "rgba(255,0,0,0.507)"
 }
 export default Theme;

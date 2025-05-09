@@ -10,3 +10,4 @@ export * from './linear-progress';
 export * from './circular-progress';
 export * from './switch';
 export * from './input';
+export * from './textarea';

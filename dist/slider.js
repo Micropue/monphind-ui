@@ -129,6 +129,13 @@ export class Slider extends useElement({
                 if (this.value !== v)
                     this.value = v;
             }
+        },
+        connected() {
+            const displayValueEles = {
+                hiddened: this.shadowRoot?.querySelector(".hidden-value"),
+                normal: this.shadowRoot?.querySelector(".value"),
+            };
+            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled);
         }
     }, setup() {
         const touchslider = this.shadowRoot?.querySelector(".slider");
@@ -140,9 +147,6 @@ export class Slider extends useElement({
             hiddened: this.shadowRoot?.querySelector(".hidden-value"),
             normal: this.shadowRoot?.querySelector(".value"),
         };
-        setTimeout(() => {
-            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled);
-        });
         let beforeWidth;
         this?.addEventListener("mousedown", (e) => {
             mousedownLocationX = e.clientX;

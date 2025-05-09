@@ -6,7 +6,7 @@ type CommonThis<P> = HTMLElement & P
  */
 interface Config<M, P extends {
     [name: string]: Prop
-}> {
+},> {
     name: string;
     template?: string;
     style?: string;

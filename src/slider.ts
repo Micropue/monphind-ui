@@ -128,6 +128,13 @@ export class Slider extends useElement<{}, Props>({
                 displayValue(displayValueEles, this.min, this.max, v, this.labeled)
                 if (this.value !== v) this.value = v
             }
+        },
+        connected() {
+            const displayValueEles = {
+                hiddened: this.shadowRoot?.querySelector(".hidden-value") as HTMLElement,
+                normal: this.shadowRoot?.querySelector(".value") as HTMLElement,
+            }
+            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled)
         }
     }, setup() {
         const touchslider = this.shadowRoot?.querySelector(".slider") as HTMLElement
@@ -139,9 +146,6 @@ export class Slider extends useElement<{}, Props>({
             hiddened: this.shadowRoot?.querySelector(".hidden-value") as HTMLElement,
             normal: this.shadowRoot?.querySelector(".value") as HTMLElement,
         }
-        setTimeout(()=>{
-            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled)
-        })
         let beforeWidth: number
         this?.addEventListener("mousedown", (e: any) => {
             mousedownLocationX = e.clientX
@@ -162,7 +166,7 @@ export class Slider extends useElement<{}, Props>({
             touchslider.style.width = `${result}%`
             const _value = Number((Math.round((this.max - this.min) * result / 100 / this.step) * this.step + this.min).toFixed(2))
             this.value = _value > this.max ? this.max : _value
-            displayValue(displayValueEles,this.min,this.max,this.value, this.labeled)
+            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled)
             this.dispatchEvent(new Event("input"))
         })
         this?.addEventListener("touchstart", (e) => {
@@ -184,7 +188,7 @@ export class Slider extends useElement<{}, Props>({
             touchslider.style.width = `${result}%`
             const _value = Number((Math.round((this.max - this.min) * result / 100 / this.step) * this.step + this.min).toFixed(2))
             this.value = _value > this.max ? this.max : _value
-            displayValue(displayValueEles,this.min,this.max,this.value, this.labeled)
+            displayValue(displayValueEles, this.min, this.max, this.value, this.labeled)
             this.dispatchEvent(new Event("input"))
         })
         return {}
