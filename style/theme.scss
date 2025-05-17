@@ -94,12 +94,28 @@
     --m-input-error-label-color: rgba(255, 0, 0, 0.507);
     --m-textarea-default-label-color: rgb(178, 178, 178);
     --m-textarea-focused-label-color: var(--m-theme-color);
-    --m-textarea-focused-outline-color:var(--m-translucency-theme-color);
-    --m-textarea-disabled-backgroundColor:#EFEFEF;
-    --m-textarea-disabled-label-color:rgb(178,178,178);
-    --m-textarea-readonly-color:rgb(178, 178, 178);
+    --m-textarea-focused-outline-color: var(--m-translucency-theme-color);
+    --m-textarea-disabled-backgroundColor: #EFEFEF;
+    --m-textarea-disabled-label-color: rgb(178, 178, 178);
+    --m-textarea-readonly-color: rgb(178, 178, 178);
     --m-textarea-error-outline-color: rgba(255, 0, 0, 0.507);
     --m-textarea-error-label-color: rgba(255, 0, 0, 0.507);
+    --m-picker-default-view-backgroundColor: white;
+    --m-picker-default-label-color: rgb(178, 178, 178);
+    --m-picker-default-text-color: black;
+    --m-picker-default-icon-color: black;
+    --m-picker-focused-label-color:var(--m-theme-color);
+    --m-picker-focused-outline-color:var(--m-translucency-theme-color);
+    --m-picker-default-options-backgroundColor:white;
+    --m-picker-default-options-boxShadow-color:rgba(89, 89, 89, 0.122);
+    --m-picker-item-backgroundColor:white;
+    --m-picker-item-color:black;
+    --m-picker-item-selected-backgroundColor:var(--m-theme-color);
+    --m-picker-item-selected-color:white;
+    --m-picker-item-disabled-backgroundColor:white;
+    --m-picker-item-disabled-color:gray;
+    --m-picker-disabled-view-backgroundColor:#EFEFEF;
+    --m-picker-disabled-view-color:#BABABA;
 }
 
 body {

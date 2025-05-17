@@ -3,7 +3,6 @@ const name = 'm-switch';
 const template = `<div class="trigger-block"><slot></slot><slot name="status-default"></slot><slot name="status-checked"></slot></div>`;
 const style = `:host {
   width: 50.4px;
-  height: 28px;
   border-radius: 100000px;
   display: inline-flex;
   vertical-align: middle;
@@ -12,15 +11,15 @@ const style = `:host {
   box-shadow: inset 0px 3px 10px rgba(0, 0, 0, 0.0666666667);
   transition: background-color 0.3s;
   cursor: pointer;
+  aspect-ratio: 50.4 / 28;
 }
 :host([checked=true]) {
   background-color: var(--m-switch-checked-backgroundColor,${"#2EA2F9"});
 }
 :host .trigger-block {
   position: absolute;
-  transition: left 0.3s;
-  width: 22.4px;
-  height: 22.4px;
+  transition: transform 0.3s;
+  height: 80%;
   display: flex;
   top: 0;
   bottom: 0;
@@ -31,42 +30,43 @@ const style = `:host {
   background-color: var(--m-switch-trigger-backgroundColor,${"white"});
   border-radius: 50%;
   color: black;
+  aspect-ratio: 1 / 1;
 }
 :host .trigger-block ::slotted(m-icon),
 :host .trigger-block ::slotted(m-circular-progress),
 :host .trigger-block ::slotted(svg) {
   color: currentColor;
-  width: 17.92px;
-  height: 17.92px;
+  width: 80%;
+  height: 80%;
   transition: all 0.3s;
 }
 :host .trigger-block ::slotted(m-icon[slot=status-default]),
 :host .trigger-block ::slotted(m-circular-progress[slot=status-default]),
 :host .trigger-block ::slotted(svg[slot=status-default]) {
   color: currentColor;
-  width: 17.92px;
-  height: 17.92px;
+  width: 80%;
+  height: 80%;
   transition: all 0.3s;
 }
 :host .trigger-block ::slotted(m-icon[slot=status-checked]),
 :host .trigger-block ::slotted(m-circular-progress[slot=status-checked]),
 :host .trigger-block ::slotted(svg[slot=status-checked]) {
   color: currentColor;
-  width: 17.92px;
-  height: 17.92px;
+  width: 80%;
+  height: 80%;
   transition: all 0.3s;
 }
 :host .trigger-block m-icon,
 :host .trigger-block m-circular-progress,
 :host .trigger-block svg {
   color: currentColor;
-  width: 17.92px;
-  height: 17.92px;
+  width: 80%;
+  height: 80%;
   transition: all 0.3s;
 }
 :host([checked=true]) .trigger-block {
   color: var(--m-switch-checked-foreColor,${"#2EA2F9"});
-  left: calc(100% - 22.4px - 2.8px);
+  transform: translateX(100%);
 }
 :host([checked=true]) .trigger-block ::slotted(m-icon[slot=status-default]),
 :host([checked=true]) .trigger-block ::slotted(m-circular-progress[slot=status-default]),

@@ -99,6 +99,22 @@ const enum Theme {
     textarea_readonly_color = "rgb(178,178,178)",
     textarea_error_outline_color = "rgba(255,0,0,0.507)",
     textarea_error_label_color = "rgba(255,0,0,0.507)",
+    picker_default_view_backgroundColor = "white",
+    picker_default_label_color = "rgb(178,178,178)",
+    picker_default_text_color = "black",
+    picker_default_icon_color = "black",
+    picker_focused_label_color = "#2EA2F9",
+    picker_focused_outline_color = "#2ea1f9d6",
+    picker_default_options_backgroundColor = "white",
+    picker_default_options_boxShadow_color = "rgba(89,89,89,0.122)",
+    picker_item_backgroundColor = "white",
+    picker_item_color = "black",
+    picker_item_selected_backgroundColor = "#2EA2F9",
+    picker_item_selected_color = "white",
+    picker_item_disabled_backgroundColor = "white",
+    picker_item_disabled_color = "gray",
+    picker_disabled_view_backgroundColor = "#EFEFEF",
+    picker_disabled_view_color = "#BABABA",
 }
 
 export default Theme

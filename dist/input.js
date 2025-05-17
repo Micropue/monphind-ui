@@ -115,6 +115,9 @@ const style = `:host {
   font-size: 12px;
   transition: all 0.3s;
   font-weight: 300;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
 }
 `;
 const props = {
