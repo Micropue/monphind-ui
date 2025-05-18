@@ -34,7 +34,7 @@ const style = `:host {
   bottom: 0;
   margin: auto;
   max-width: calc(100% - 26px - 20px);
-  overflow-x: scroll;
+  overflow-x: hidden;
   white-space: nowrap;
   font-weight: 300;
 }
@@ -53,6 +53,7 @@ const style = `:host {
   stroke: currentColor;
   width: inherit;
   height: inherit;
+  fill: currentColor;
 }
 :host .view[has_text=true] .label {
   top: -100%;
@@ -73,6 +74,9 @@ const style = `:host {
   z-index: 1;
   transform: scaleY(0%);
   transform-origin: top;
+}
+:host .options::-webkit-scrollbar{
+  display: none;
 }
 :host .options:not([direction=north]) {
   top: calc(100% + 10px);
@@ -222,9 +226,7 @@ export class Picker extends useElement({
     setup(shadowRoot) {
         const view = shadowRoot.querySelector(".view");
         const options = shadowRoot.querySelector(".options");
-        view.addEventListener("click", () => {
-            const status = this.getAttribute("focused") || "false";
-            this.setAttribute("focused", status === 'false' ? "true" : "false");
+        const computeDirection = () => {
             const direction = {
                 top: view.offsetTop,
                 bottom: window.innerHeight - view.getBoundingClientRect().top - view.getBoundingClientRect().height
@@ -235,6 +237,12 @@ export class Picker extends useElement({
             else {
                 options.setAttribute("direction", "sourth");
             }
+        };
+        computeDirection();
+        view.addEventListener("click", () => {
+            const status = this.getAttribute("focused") || "false";
+            this.setAttribute("focused", status === 'false' ? "true" : "false");
+            computeDirection();
         });
         let is_mouseover = false;
         this.addEventListener("mouseover", () => {

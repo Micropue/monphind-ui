@@ -19,6 +19,9 @@ const style = `:host {
   transition: outline 0.2s;
   outline: 2px solid transparent;
 }
+:host input{
+  color: var(--m-input-textColor,${"black"});
+}
 :host([readonly=true]) input{
   color:var(--m-input-readonly-color,${"rgb(178,178,178)"});
 }

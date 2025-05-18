@@ -1,6 +1,6 @@
 {
   "name": "monphind-ui",
-  "version": "1.12.0",
+  "version": "1.14.0",
   "description": "A reactive component library built on top of the Web Components API",
   "main": "./dist/main.js",
   "scripts": {

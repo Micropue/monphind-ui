@@ -20,6 +20,9 @@ const style = `:host {
   transition: outline 0.2s;
   outline: 2px solid transparent;
 }
+:host input{
+  color: var(--m-input-textColor,${Theme.input_textColor});
+}
 :host([readonly=true]) input{
   color:var(--m-input-readonly-color,${Theme.input_readonly_color});
 }

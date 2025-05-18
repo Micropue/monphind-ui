@@ -5,7 +5,7 @@ const style = `:host {
   width: 250px;
   height: 200px;
   border-radius: 15px;
-  background-color: white;
+  background-color: var(--m-textarea-default-backgroundColor,${"white"});
   position: relative;
   outline: 0px solid transparent;
   transition: outline 0.2s;
@@ -22,6 +22,7 @@ const style = `:host {
   background-color: transparent;
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  color: var(--m-textarea-textColor ,${"black"});
 }
 :host p.label {
   position: absolute;

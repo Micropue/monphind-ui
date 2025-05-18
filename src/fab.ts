@@ -36,7 +36,7 @@ min-height:60px;
 margin-right:10px;
 }
 ::slotted([slot=end]){
-margin-right:10px;
+margin-left:10px;
 }
 :host(:not([disabled=true]):hover) {
 transform: translateY(-3px);
