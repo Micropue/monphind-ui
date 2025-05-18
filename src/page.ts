@@ -389,7 +389,7 @@ const props: Props = {
     theme: "light"
 }
 type Props = {
-    theme: "light" | "night" | "auto"
+    theme: "light" | "night"
 }
 
 export class Page extends useElement({
