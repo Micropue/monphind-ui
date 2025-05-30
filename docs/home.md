@@ -7,7 +7,7 @@
 <m-button></m-button> <!-- ✅ -->
 ```
 
-如果你完全不了解**Web Components**，可以查看MDN文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components。
+如果你完全不了解**Web Components**，可以查看MDN文档：https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components 。
 
 **monphind**可以在零依赖环境下运行，只需要引入一个`JavaScript`文件就可以支持样式、动态创建组件。
 
