@@ -15,17 +15,17 @@
 和`button`类似，支持禁用与按钮四种样式。
 
 ```html view
-<m-icon-button type="outlined"></m-icon-button>
-<m-icon-button type="text"></m-icon-button>
-<m-icon-button disabled="true"></m-icon-button>
-<m-icon-button type="filled"></m-icon-button>
+<m-icon-button type="outlined"><m-icon name="star"></m-icon></m-icon-button>
+<m-icon-button type="text"><m-icon name="star"></m-icon></m-icon-button>
+<m-icon-button disabled="true"><m-icon name="star"></m-icon></m-icon-button>
+<m-icon-button type="filled"><m-icon name="star"></m-icon></m-icon-button>
 ```
 
 使用圆形进度（`m-circular-progress`）
 
 ```html view
 <m-icon-button>
-	<m-circulat-progress unknown="true"></m-circulat-progress>
+	<m-circular-progress unknown="true"></m-circular-progress>
 </m-icon-button>
 ```
 
