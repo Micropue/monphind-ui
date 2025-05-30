@@ -2,6 +2,16 @@ import { useElement } from "./core/element"
 import Theme from "./core/default-theme"
 const name = 'm-page'
 const style = `
+:host::-webkit-scrollbar {
+    display: none;
+}
+:host::selection {
+    background-color: var(--m-selection-backgroundColor);
+    color: var(--m-selection-textColor);
+}
+:host:not(:defined){
+    display: none;
+}
 :host{
     display: block;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -250,16 +260,7 @@ const style = `
     --m-dark-picker-disabled-view-backgroundColor: ${Theme.dark_picker_disabled_view_backgroundColor};
     --m-dark-picker-disabled-view-color: ${Theme.dark_picker_disabled_view_color};
 }
-:host::-webkit-scrollbar {
-    display: none;
-}
-:host::selection {
-    background-color: var(--m-selection-backgroundColor);
-    color: var(--m-selection-textColor);
-}
-:host:not(:defined){
-    display: none;
-}
+
 :host([theme=night]){
     --m-theme-color: var(--m-dark-theme-color);
     --m-translucency-theme-color: var(--m-dark-translucency-theme-color);

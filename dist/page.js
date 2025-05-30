@@ -1,6 +1,16 @@
 import { useElement } from "./core/element";
 const name = 'm-page';
 const style = `
+:host::-webkit-scrollbar {
+    display: none;
+}
+:host::selection {
+    background-color: var(--m-selection-backgroundColor);
+    color: var(--m-selection-textColor);
+}
+:host:not(:defined){
+    display: none;
+}
 :host{
     display: block;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -249,16 +259,7 @@ const style = `
     --m-dark-picker-disabled-view-backgroundColor: ${"#121212"};
     --m-dark-picker-disabled-view-color: ${"#BABABA"};
 }
-:host::-webkit-scrollbar {
-    display: none;
-}
-:host::selection {
-    background-color: var(--m-selection-backgroundColor);
-    color: var(--m-selection-textColor);
-}
-:host:not(:defined){
-    display: none;
-}
+
 :host([theme=night]){
     --m-theme-color: var(--m-dark-theme-color);
     --m-translucency-theme-color: var(--m-dark-translucency-theme-color);

@@ -2,13 +2,13 @@
 
 文本域，可用于替换原生`<textarea>`
 
-```html
+```html view
 <m-textarea label="Textarea" value="textarea"></m-textarea>
 ```
 
 启用自适应高度（随文本输入自适应文本域高度）
 
-```html
+```html view
 <m-textarea adaptive="true"></m-textarea>
 ```
 
@@ -16,7 +16,7 @@
 
 禁用/只读文本域
 
-```html
+```html view
 <m-textarea readonly="true"></m-textarea>
 <m-textarea disabled="true"></m-textarea>
 ```

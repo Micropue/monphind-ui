@@ -2,20 +2,20 @@
 
 复选框，可以用于替代原生`checkbox`
 
-```html
+```html view
 <m-checkbox checked="true"></m-checkbox>
 <m-checkbox indeterminate="true"></m-checkbox><!--未知样式-->
 ```
 
 使用插槽显示`label`
 
-```html
+```html view
 <m-checkbox>已阅读用户协议</m-checkbox>
 ```
 
 禁用`checkbox`
 
-```html
+```html view
 <m-checkbox disabled="true">已阅读用户协议</m-checkbox>
 ```
 

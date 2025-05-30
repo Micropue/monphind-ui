@@ -217,9 +217,9 @@
   --m-dark-input-readonly-color: rgb(178, 178, 178);
   --m-dark-input-error-outline-color: rgba(255, 0, 0, 0.507);
   --m-dark-input-error-label-color: rgba(255, 0, 0, 0.507);
-  --m-dark-input-textColor:white;
-  --m-dark-textarea-default-backgroundColor:rgb(0, 0, 0);
-  --m-dark-textarea-textColor:white;
+  --m-dark-input-textColor: white;
+  --m-dark-textarea-default-backgroundColor: rgb(0, 0, 0);
+  --m-dark-textarea-textColor: white;
   --m-dark-textarea-default-label-color: rgb(178, 178, 178);
   --m-dark-textarea-focused-label-color: var(--m-theme-color);
   --m-dark-textarea-focused-outline-color: var(--m-translucency-theme-color);
@@ -246,6 +246,7 @@
   --m-dark-picker-disabled-view-color: #BABABA;
 }
 
+/* m-page[theme=night] */
 m-page[theme=night] {
   --m-theme-color: var(--m-dark-theme-color);
   --m-translucency-theme-color: var(--m-dark-translucency-theme-color);
@@ -370,6 +371,7 @@ m-page[theme=night] {
   --m-picker-disabled-view-color: var(--m-dark-picker-disabled-view-color);
 }
 
+/* base css*/
 body {
   -moz-user-select: none;
        user-select: none;

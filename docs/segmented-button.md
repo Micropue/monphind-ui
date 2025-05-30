@@ -2,7 +2,7 @@
 
 分组按钮
 
-```html
+```html view
 <m-segmented-button>
 	<m-segmented-button-item value="1">item1</m-segmented-button-item>
   <m-segmented-button-item value="2">item2</m-segmented-button-item>
@@ -13,7 +13,7 @@
 
 禁用某个按钮
 
-```html
+```html view
 <m-segmented-button>
 	<m-segmented-button-item value="1" disabled="true">item1</m-segmented-button-item>
   <m-segmented-button-item value="2">item2</m-segmented-button-item>
@@ -28,7 +28,7 @@
 
 默认选中元素
 
-```html
+```html view
 <m-segmented-button>
 	<m-segmented-button-item selected="true" value="1">item1</m-segmented-button-item>
   <m-segmented-button-item value="2">item2</m-segmented-button-item>

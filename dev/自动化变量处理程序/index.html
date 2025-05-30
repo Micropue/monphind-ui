@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化变量处理程序</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <m-page theme="night">
+        <header>
+            <span class="logo">MONPHIND</span>&nbsp;&nbsp;&nbsp;
+            <p>组件库自动化颜色变量处理系统</p>
+        </header>
+        <main>
+            <div class="first">
+                <h1 class="title"><span class="title-gray">第一步</span>选择theme.scss与theme-dark.scss</h1>
+                <div class="select-file" data-file-selector>
+                    <input type="file" id="select-file">
+                    <label for="select-file">
+                        <m-button>选择theme.scss</m-button>
+                    </label>
+                </div>
+                <div class="select-file" data-file-dark-selector>
+                    <input type="file" id="select-dark-file">
+                    <label for="select-dark-file">
+                        <m-button>选择theme-dark.scss</m-button>
+                    </label>
+                </div>
+            </div>
+            <div class="steps">
+
+            </div>
+        </main>
+    </m-page>
+    <script src="../../dist/monphind.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

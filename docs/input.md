@@ -2,13 +2,13 @@
 
 输入框，可用于替代原版输入框。
 
-```html
+```html view
 <m-input label="请输入内容"></m-input>
 ```
 
 不同的输入框类型
 
-```html
+```html view
 <m-input type="text"></m-input>
 <m-input type="password"></m-input>
 ```
@@ -19,7 +19,7 @@
 
 插入图标
 
-```html
+```html view
 <m-input label="输入用户名">
 	<m-icon name="user" slot="icon"></m-icon><!--前图标-->
   <m-icon-button type="text">
@@ -30,13 +30,13 @@
 
 禁用输入框
 
-```html
+```html view
 <m-input disabled="true"></m-input>
 ```
 
 只读
 
-```html
+```html view
 <m-input readonly="true"></m-input>
 ```
 
@@ -46,7 +46,7 @@
 
 设置`maxlength`属性来约束输入长度
 
-```html
+```html view
 <m-input type="text" maxlength="1000"></m-input>
 ```
 

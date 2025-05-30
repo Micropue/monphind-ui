@@ -2,7 +2,7 @@
 
 开关，可以代替`radio`。
 
-```html
+```html view
 <m-switch></m-switch>
 <m-switch>
 	<m-icon name="moon"></m-icon>
@@ -11,7 +11,7 @@
 
 自定义不同状态下的图标
 
-```html
+```html view
 <m-switch>
 	<m-icon name="sun" slot="status-default"></m-icon><!-- 关闭图标 -->
 	<m-icon name="moon" slot="status-checked"></m-icon><!-- 打开图标 -->
@@ -26,7 +26,7 @@
 
 禁用
 
-```html
+```html view
 <m-switch disabled="true"></m-switch>
 ```
 

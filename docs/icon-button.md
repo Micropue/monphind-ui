@@ -2,7 +2,7 @@
 
 图标按钮
 
-```html
+```html view
 <m-icon-button>
 	<m-icon name="star"></m-icon><!-- 必须设置默认插槽 -->
 </m-icon-button>
@@ -14,7 +14,7 @@
 
 和`button`类似，支持禁用与按钮四种样式。
 
-```html
+```html view
 <m-icon-button type="outlined"></m-icon-button>
 <m-icon-button type="text"></m-icon-button>
 <m-icon-button disabled="true"></m-icon-button>
@@ -23,7 +23,7 @@
 
 使用圆形进度（`m-circular-progress`）
 
-```html
+```html view
 <m-icon-button>
 	<m-circulat-progress unknown="true"></m-circulat-progress>
 </m-icon-button>

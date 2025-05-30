@@ -2,7 +2,7 @@
 
 单选框，可替代原生`Radio`
 
-```html
+```html view
 <m-radio name="group-name">Radio1</m-radio>
 <m-radio name="group-name">Radio2</m-radio>
 <m-radio name="group-name">Radio3</m-radio>
@@ -10,13 +10,13 @@
 
 使用插槽显示`label`
 
-```html
+```html view
 <m-radio name="group-name">Radio</m-radio>
 ```
 
 禁用`Radio`
 
-```html
+```html view
 <m-radio name="group-name" disabled="true">Radio1</m-radio>
 ```
 

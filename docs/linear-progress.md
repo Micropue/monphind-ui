@@ -2,13 +2,13 @@
 
 条形进度
 
-```html
+```html view
 <m-linear-progress value="10"></m-linear-progress>
 ```
 
 启用未知进度
 
-```html
+```html view
 <m-linear-progress unknown="true"></m-linear-progress>
 ```
 

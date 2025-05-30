@@ -1,13 +1,13 @@
 declare const name = "m-linear-progress";
 declare const props: {
-    unknow: boolean;
+    unknown: boolean;
     value: number;
     max: number;
 };
 type Props = typeof props;
 declare const LinearProgress_base: {
     new (): {
-        unknow: boolean;
+        unknown: boolean;
         value: number;
         max: number;
     } & HTMLElement;

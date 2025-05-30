@@ -2,19 +2,19 @@
 
 圆形进度，支持未知或已知动态修改进度
 
-```html
+```html view
 <m-circular-progress value="30"></m-circular-progress>
 ```
 
 未知进度
 
-```html
+```html view
 <m-circular-progress unknown="true"></m-circular-progress>
 ```
 
 修改最大值
 
-```html
+```html view
 <m-circular-progress value="10" max="200"></m-circular-progress>
 ```
 
@@ -31,7 +31,7 @@ progress.value = 20
 
 修改颜色
 
-```html
+```html view
 <m-circular-progress style="color: red"></m-circular-progress>
 ```
 

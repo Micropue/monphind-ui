@@ -38,7 +38,7 @@ const style = `:host {
 }`
 const template = `<div class="value"></div>`
 const props = {
-    unknow: false,
+    unknown: false,
     value: 0,
     max: 100,
 }

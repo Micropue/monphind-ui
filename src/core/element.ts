@@ -25,6 +25,7 @@ const baseStyle = `:host{
     -webkit-user-select: none;
     -webkit-tap-highlight-color: transparent;
     font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: normal;
 }`
 
 const initBaseStyle = function (shadowRoot: ShadowRoot): void {

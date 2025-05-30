@@ -1,6 +1,6 @@
 declare const name = "m-page";
 type Props = {
-    theme: "light" | "night" | "auto";
+    theme: "light" | "night";
 };
 declare const Page_base: {
     new (): Props & HTMLElement;

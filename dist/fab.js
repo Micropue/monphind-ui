@@ -15,6 +15,7 @@ transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
 justify-content:center;
 min-width:60px;
 min-height:60px;
+vertical-align:middle;
 }
 ::slotted(m-circular-progress),::slotted(m-icon),::slotted(m-icon[slot=start]),::slotted(m-circular-progress[slot=start]) , ::slotted(svg[slot=start]) {
     color:currentColor;

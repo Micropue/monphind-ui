@@ -1,6 +1,6 @@
 {
   "name": "monphind-ui",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "description": "A reactive component library built on top of the Web Components API",
   "main": "./dist/main.js",
   "scripts": {
@@ -23,5 +23,8 @@
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "rollup": "^4.35.0"
+  },
+  "dependencies": {
+    "html-minifier": "^4.0.0"
   }
 }

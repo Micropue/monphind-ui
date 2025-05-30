@@ -2,19 +2,19 @@
 
 滑块，可用于替代`input:range`
 
-```html
+```html view
 <m-slider min="0" max="1" step="0.1" value="0.3" labeled="false"></m-slider>
 ```
 
 禁用滑块
 
-```html
+```html view
 <m-slider disabled="true"></m-slider>
 ```
 
 显示`label`
 
-```html
+```html view
 <m-slider labeled="true"></m-slider>
 ```
 

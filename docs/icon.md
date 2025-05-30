@@ -4,7 +4,7 @@
 
 内置图标
 
-```html
+```html view
 <m-icon name="search"></m-icon>
 <m-icon name="home"></m-icon>
 <m-icon name="menu"></m-icon>
@@ -34,7 +34,7 @@
 
 自定义颜色
 
-```html
+```html view
 <m-icon style="color:red" name="mail"></m-icon>
 ```
 

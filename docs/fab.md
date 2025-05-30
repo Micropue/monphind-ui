@@ -2,7 +2,7 @@
 
 Floating Action Button 浮动操作按钮
 
-```html
+```html view
 <m-fab>
 	<m-icon name="add"></m-icon>
 </m-fab>
@@ -17,14 +17,14 @@ Floating Action Button 浮动操作按钮
 
 支持`start`、默认、`end`三个插槽，不具备默认浮动样式，浮动元素需要自行定义。
 
-```html
+```html view
 <!--禁用按钮-->
 <m-fab disabled="true">Fab</m-fab>
 ```
 
 自定义样式
 
-```html
+```html view
 <m-fab style="border-radius:10px; background-color:#fefefe;">Fab</m-fab>
 ```
 

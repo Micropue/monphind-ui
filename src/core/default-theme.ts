@@ -120,7 +120,7 @@ const enum Theme {
     picker_item_disabled_color = "gray",
     picker_disabled_view_backgroundColor = "#EFEFEF",
     picker_disabled_view_color = "#BABABA",
-    /** dark theme */
+    /* dark theme */
     dark_theme_color = "#0076d1",
     dark_translucency_theme_color = "#0069b9d6",
     dark_selection_backgroundColor = "#0069b9d6",

@@ -2,7 +2,7 @@
 
 选择框，可以用于替代原生的`<select>`
 
-```html
+```html view
 <m-picker>
 	<m-picker-item value="a">Item 1</m-picker-item>
   <m-picker-item value="b">Item 2</m-picker-item>
@@ -13,7 +13,7 @@
 
 设置`value`或子元素的`selected`属性来设置默认选中
 
-```html
+```html view
 <m-picker>
 	<m-picker-item value="a" selected="true">Item 1</m-picker-item>
   <m-picker-item value="b">Item 2</m-picker-item>
@@ -53,7 +53,7 @@ picker.onchange = ()=>{
 
 禁用某个选项
 
-```html
+```html view
 <m-picker value="a">
 	<m-picker-item value="a">Item 1</m-picker-item>
   <m-picker-item value="b" disabled="true">Item 2</m-picker-item>
@@ -62,7 +62,7 @@ picker.onchange = ()=>{
 
 禁用`picker`
 
-```html
+```html view
 <m-picker disabled="true">
 	<m-picker-item value="a">Item 1</m-picker-item>
   <m-picker-item value="b">Item 2</m-picker-item>

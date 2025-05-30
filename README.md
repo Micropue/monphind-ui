@@ -2,6 +2,12 @@
 
 **A reactive component library built on top of the `Web Components API`**
 
+### 通过npm安装
+
+```bash
+npm i monphind-ui
+```
+
 ### 动态创建组件(Creating components dynamically)
 
 ```javascript

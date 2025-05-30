@@ -18,12 +18,9 @@ export default {
             format: "iife",
             name: "monphind",
             compact: true,
-            plugins:[terser({
-                // mangle:{
-                //     eval:true
-                // },
-                format:{
-                    semicolons:false
+            plugins: [terser({
+                format: {
+                    semicolons: false
                 }
             })]
         }

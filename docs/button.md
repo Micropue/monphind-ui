@@ -2,7 +2,7 @@
 
 按钮
 
-```html
+```html view
 <m-button>Button</m-button>
 <m-button type="outlined">Button</m-button>
 <m-button type="text">Button</m-button>
@@ -11,7 +11,7 @@
 
 设置`disabled`属性来禁用
 
-```html
+```html view
 <m-button disabled="true">Button</m-button>
 ```
 
@@ -19,7 +19,7 @@
 
 使用插槽
 
-```html
+```html view
 <m-button>
 	<m-icon name="user" slot="start"></m-icon>
   Button
@@ -29,7 +29,7 @@
 
 自定义样式
 
-```html
+```html view
 <m-button style="border-radius: 2px;">
    Button
 </m-button>
