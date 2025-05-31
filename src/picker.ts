@@ -244,6 +244,7 @@ export class Picker extends useElement({
       this.setAttribute("focused", status === 'false' ? "true" : "false")
       computeDirection()
     })
+    this.parentElement?.addEventListener("scroll", computeDirection)
     let is_mouseover = false
     this.addEventListener("mouseover", () => {
       is_mouseover = true

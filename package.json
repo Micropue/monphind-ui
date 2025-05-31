@@ -1,6 +1,6 @@
 {
   "name": "monphind-ui",
-  "version": "1.14.3",
+  "version": "1.14.4",
   "description": "A reactive component library built on top of the Web Components API",
   "main": "./dist/main.js",
   "scripts": {
@@ -15,6 +15,10 @@
     "component",
     "micropue"
   ],
+  "exports": {
+    ".": "./dist/main.js",
+    "./*": "./dist/*.js"
+  },
   "author": "Micropue",
   "homepage": "https://monphind.micropue.com.cn",
   "repository": "Micropue/monphind-ui",

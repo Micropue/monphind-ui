@@ -32,7 +32,7 @@ height: 18px;
 border: 2px solid var(--m-checkbox-borderColor,${Theme.checkbox_borderColor});
 margin-right: 10px;
 border-radius: 8px;
-transition: color 0.3s;
+transition: color 0.3s, background-color 0.3s;
 position: relative;
 }
 :host svg {
